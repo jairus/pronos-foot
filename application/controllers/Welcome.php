@@ -23,7 +23,7 @@ class Welcome extends CI_Controller {
 		$data = array();
 		// $data['message'] = "Hello World";
 		// $this->load->view('welcome_message', $data);
-		$this->load->view('main', $data);
+		$this->load->view('main/main', $data);
 
 	}
 }
