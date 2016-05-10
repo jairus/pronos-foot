@@ -30,7 +30,7 @@ Devenez le Champion de Pronos-Foot.com et Gagnez un iPhone 6.">
       }
     });
   </script>
-  <script type="text/javascript" src="js/modernizr.js"></script>
-  <link rel="shortcut icon" type="image/x-icon" href="images/pronos-foot-logo-small.png">
-  <link rel="apple-touch-icon" href="images/pronos-foot-logo-large.png">
+  <script type="text/javascript" src="<?php echo base_url();?>assets/js/modernizr.js"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="assets/images/pronos-foot-logo-small.png">
+  <link rel="apple-touch-icon" href="assets/images/pronos-foot-logo-large.png">
 </head>

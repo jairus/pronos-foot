@@ -15,7 +15,8 @@
           </div>
           <div class="w-col w-col-10 w-col-small-10 w-col-tiny-10">
             <p class="prix-text2">Trouvant le Vainqueur des Matchs:
-              <br><span class="note"><span class="_1n2">1 </span>Victoire de l’equipe à&nbsp;domicile &nbsp; | &nbsp;<span class="_1n2">N</span> Match nul &nbsp;| &nbsp;<span class="_1n2">2</span> Victoire de l’equipe à l’exterieur</span>
+              <!-- <br><span class="note"><span class="_1n2">1 </span>Victoire de l’equipe à&nbsp;domicile &nbsp; | &nbsp;<span class="_1n2">N</span> Match nul &nbsp;| &nbsp;<span class="_1n2">2</span> Victoire de l’equipe à l’exterieur</span> -->
+              <br><span class="note"> Victoire de l’equipe à domicile &nbsp;|&nbsp; Match nul &nbsp;|&nbsp; Victoire de l’equipe à l’exterieur</span>
             </p>
           </div>
         </div>
@@ -44,7 +45,7 @@
         <ul class="list">
           <li class="list-item">Vous pensez que la France va gagner 3-0 au bout de 90 minutes : vous pronostiquez 3-0 pour la France</li>
           <li class="list-item">Vous pensez que les équipes seront à 1-1 au bout de 90 minutes mais que la France va gagner 3-1 après prolongations : vous pronostiquez 3-1 pour la France</li>
-          <li class="list-item">Vous pensez que les équipes seront à 1-1 au bout de 90 minutes, 2-2 au bout de 120 minutes et que la France va gagner la séance de tirs au but par 5 tirs au but à 4 : vous pronostiquez 2-2 et spécifiez la France comme vainqueur de la rencontre</li>
+          <li class="list-item">Vous pensez que les équipes seront à 1-1 au bout de 90 minutes, 2-2 au bout de 120 minutes et que la France va gagner la séance de tirs au but par 5 tirs au but à 4 : vous pronostiquez 2-2 </li>
         </ul>
         <p class="regles-text">Le nombre de points que vos pronostics vous rapportent dépendent :</p>
         <ul class="list">
@@ -268,7 +269,7 @@
           <p class="nom-ville-text left">AUTRICHE</p>
         </div>
         <div class="w-col w-col-6 w-col-small-6 w-col-tiny-6">
-          <div class="date-game">Groupe F | Mardi 14 juin, 18:00</div>
+          <div class="date-game">Groupe F | Mardi 14 Juin, 18:00</div>
         </div>
         <div class="w-col w-col-3 w-col-small-3 w-col-tiny-3 w-clearfix grille-column3"><img width="80" src="assets/images/Hongrie.png" class="logo-image right">
           <p class="nom-ville-text right">HONGRIE</p>
@@ -279,7 +280,7 @@
           <p class="nom-ville-text left">PORTUGAL</p>
         </div>
         <div class="w-col w-col-6 w-col-small-6 w-col-tiny-6">
-          <div class="date-game">Groupe F | Mardi 14 juin, 21:00</div>
+          <div class="date-game">Groupe F | Mardi 14 Juin, 21:00</div>
         </div>
         <div class="w-col w-col-3 w-col-small-3 w-col-tiny-3 w-clearfix grille-column3"><img width="80" src="assets/images/Islande.png" class="logo-image right">
           <p class="nom-ville-text right">ISLANDE</p>
@@ -422,7 +423,7 @@
           <p class="nom-ville-text left">ROUMANIE</p>
         </div>
         <div class="w-col w-col-6 w-col-small-6 w-col-tiny-6">
-          <div class="date-game">Groupe A | Dimanche 19 juin, 21:00</div>
+          <div class="date-game">Groupe A | Dimanche 19 Juin, 21:00</div>
         </div>
         <div class="w-col w-col-3 w-col-small-3 w-col-tiny-3 w-clearfix grille-column3"><img width="60" src="assets/images/Albanie.png" class="logo-image right">
           <p class="nom-ville-text right">ALBANIE</p>
@@ -510,7 +511,7 @@
           <p class="nom-ville-text left">ISLANDE</p>
         </div>
         <div class="w-col w-col-6 w-col-small-6 w-col-tiny-6">
-          <div class="date-game">Groupe E | Mercredi 22 juin, 18:00</div>
+          <div class="date-game">Groupe E | Mercredi 22 Juin, 18:00</div>
         </div>
         <div class="w-col w-col-3 w-col-small-3 w-col-tiny-3 w-clearfix grille-column3"><img width="80" src="assets/images/Autriche.png" class="logo-image right">
           <p class="nom-ville-text right">AUTRICHE</p>
@@ -521,7 +522,7 @@
           <p class="nom-ville-text left">HONGRIE</p>
         </div>
         <div class="w-col w-col-6 w-col-small-6 w-col-tiny-6">
-          <div class="date-game">Groupe E | Mercredi 22 juin, 18:00</div>
+          <div class="date-game">Groupe E | Mercredi 22 Juin, 18:00</div>
         </div>
         <div class="w-col w-col-3 w-col-small-3 w-col-tiny-3 w-clearfix grille-column3"><img width="80" src="assets/images/Portugal.png" class="logo-image right">
           <p class="nom-ville-text right">PORTUGAL</p>
@@ -532,7 +533,7 @@
           <p class="nom-ville-text left">ITALIE</p>
         </div>
         <div class="w-col w-col-6 w-col-small-6 w-col-tiny-6">
-          <div class="date-game">Groupe F | Mercredi 22 juin, 21:00</div>
+          <div class="date-game">Groupe F | Mercredi 22 Juin, 21:00</div>
         </div>
         <div class="w-col w-col-3 w-col-small-3 w-col-tiny-3 w-clearfix grille-column3"><img width="80" src="assets/images/Irlande.png" class="logo-image right">
           <p class="nom-ville-text right">IRLANDE</p>
@@ -543,7 +544,7 @@
           <p class="nom-ville-text left">SUEDE</p>
         </div>
         <div class="w-col w-col-6 w-col-small-6 w-col-tiny-6">
-          <div class="date-game">Groupe F | Mercredi 22 juin, 21:00</div>
+          <div class="date-game">Groupe F | Mercredi 22 Juin, 21:00</div>
         </div>
         <div class="w-col w-col-3 w-col-small-3 w-col-tiny-3 w-clearfix grille-column3"><img width="80" src="assets/images/Roumanie.png" class="logo-image right">
           <p class="nom-ville-text right">BELGIQUE</p>
