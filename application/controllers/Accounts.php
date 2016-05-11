@@ -12,7 +12,7 @@ class Accounts extends CI_Controller {
   public function index()
   {
     $data = array();
-    $this->load->view('accounts/account', $data);
+    $this->load->view('accounts/account_elimination', $data);
   }
 
   public function account_group()

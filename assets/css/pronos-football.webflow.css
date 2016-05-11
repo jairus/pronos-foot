@@ -186,6 +186,14 @@ p {
   font-size: 18px;
 }
 
+.button.enregistrer {
+  width: 45%;
+  height: 49px;
+  margin-top: 20px;
+  float: none;
+  line-height: 20px;
+}
+
 .nav-section {
   position: fixed;
   left: 0px;
@@ -497,7 +505,7 @@ p {
   margin-left: 5px;
   float: left;
   font-family: Raleway, sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 18px;
   text-transform: uppercase;
 }
@@ -521,9 +529,14 @@ p {
   -ms-flex-line-pack: center;
   align-content: center;
   font-family: Raleway, sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 18px;
+  text-align: right;
   text-transform: uppercase;
+}
+
+.nom-ville-text.right.en {
+  font-size: 15px;
 }
 
 .grille-button {
@@ -676,12 +689,20 @@ p {
   box-shadow: none;
 }
 
+.facebook-button.footer.en {
+  width: 215px;
+}
+
 .facebook-button.header {
   width: 220px;
   height: 36px;
   margin-top: 0px;
   float: left;
   box-shadow: none;
+}
+
+.facebook-button.header.en {
+  width: 180px;
 }
 
 .facebook-button.partager {
@@ -694,6 +715,10 @@ p {
   border-radius: 5px;
   box-shadow: none;
   line-height: 38px;
+}
+
+.facebook-button.en {
+  width: 338px;
 }
 
 .fecebook-logo {
@@ -1275,12 +1300,12 @@ p {
 .text-versus {
   position: static;
   display: block;
-  width: auto;
+  width: 49px;
   margin-top: 0px;
   margin-right: auto;
   margin-left: auto;
   padding-right: 0px;
-  float: left;
+  float: none;
   clear: none;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -1304,7 +1329,7 @@ p {
   font-family: Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, sans-serif;
   color: #0b96e6;
   font-size: 35px;
-  line-height: 12px;
+  line-height: 17px;
   text-align: center;
 }
 
@@ -1846,7 +1871,8 @@ p {
 }
 
 .regles-text.title {
-  margin-top: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
   font-size: 18px;
   line-height: 19px;
   font-weight: 700;
@@ -1855,7 +1881,9 @@ p {
 
 .regles-text.title.centered {
   margin-top: 0px;
+  margin-bottom: 0px;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .list {
@@ -1891,8 +1919,16 @@ p {
 }
 
 .row-points {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   margin-top: 20px;
   margin-bottom: 10px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .row-regles-points {
@@ -2054,7 +2090,7 @@ p {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 20%;
+  width: 29%;
   float: none;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -2072,10 +2108,14 @@ p {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 auto;
+  -ms-flex: 0 auto;
+  flex: 0 auto;
+}
+
+.block-scores.after-groups {
+  width: 20%;
 }
 
 .block-team-and-score {
@@ -2083,7 +2123,7 @@ p {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -2110,7 +2150,7 @@ p {
   -ms-flex-item-align: center;
   align-self: center;
   font-family: Raleway, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 18px;
   font-weight: 700;
   text-align: right;
@@ -2147,19 +2187,27 @@ p {
   -webkit-align-content: flex-start;
   -ms-flex-line-pack: start;
   align-content: flex-start;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  -webkit-box-ordinal-group: 1;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
   -webkit-box-flex: 0;
   -webkit-flex: 0 auto;
   -ms-flex: 0 auto;
   flex: 0 auto;
+  text-align: left;
 }
 
 .input-scores-field {
   display: block;
-  width: 40px;
-  height: 40px;
-  margin-right: 2px;
+  width: 42px;
+  height: 42px;
+  margin-right: 0px;
   margin-bottom: 0px;
-  margin-left: 2px;
+  margin-left: 0px;
   padding: 0px;
   float: left;
   border-radius: 4px;
@@ -2172,12 +2220,18 @@ p {
 }
 
 .input-scores-field.right {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
+  margin-right: 0px;
   margin-bottom: 0px;
+  margin-left: 0px;
   padding-top: 0px;
   padding-bottom: 0px;
   float: right;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 auto;
+  -ms-flex: 0 auto;
+  flex: 0 auto;
   line-height: 23px;
 }
 
@@ -2204,13 +2258,18 @@ p {
   flex: 1;
 }
 
+.form.enregistrer {
+  display: inline;
+  text-align: center;
+}
+
 .scores-field {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -2229,13 +2288,37 @@ p {
 }
 
 .scores-field.correct {
+  width: 42px;
+  height: 42px;
   background-color: #11b62b;
   color: #fff;
 }
 
 .scores-field.incorrect {
+  width: 42px;
+  height: 42px;
+  float: left;
   background-color: #c40000;
   color: #fff;
+}
+
+.scores-field.incorrect.right {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 42px;
+  height: 42px;
+  float: right;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .div-iphone {
@@ -2304,6 +2387,83 @@ p {
   display: block;
   width: 307px;
   opacity: 0.24;
+}
+
+.field-label {
+  display: block;
+  width: 45%;
+  margin: 20px auto 10px;
+  font-family: Raleway, sans-serif;
+  color: #fff;
+  font-size: 19px;
+  font-weight: 400;
+  text-align: left;
+}
+
+.input-field {
+  display: block;
+  width: 45%;
+  height: 45px;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 6px;
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.winner-field {
+  position: static;
+  left: 0px;
+  top: 69px;
+  right: 0px;
+  display: block;
+  width: 100%;
+  height: 34px;
+  margin-right: auto;
+  margin-bottom: 0px;
+  margin-left: auto;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  -webkit-box-ordinal-group: 1;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 auto;
+  -ms-flex: 0 auto;
+  flex: 0 auto;
+  font-size: 13px;
+  line-height: 17px;
+}
+
+.form-winner {
+  position: static;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.form-winner2 {
+  display: block;
+  width: 182px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 @media (max-width: 991px) {
@@ -2446,7 +2606,7 @@ p {
   .nom-ville-text.left {
     margin-top: 0px;
     font-size: 12px;
-    line-height: 21px;
+    line-height: 15px;
   }
   .nom-ville-text.right {
     display: inline-block;
@@ -2454,6 +2614,7 @@ p {
     float: right;
     clear: none;
     font-size: 12px;
+    text-align: right;
   }
   .grille-button {
     width: 91px;
@@ -2832,10 +2993,19 @@ p {
   .block-team {
     width: 42%;
   }
+  .block-scores {
+    width: 23%;
+  }
+  .block-scores.after-groups {
+    width: 25%;
+  }
   .team-flag {
     width: 60px;
     margin-right: 12px;
     margin-left: 12px;
+  }
+  .team-name {
+    font-size: 16px;
   }
   .input-scores-field {
     width: 40px;
@@ -2846,6 +3016,12 @@ p {
   }
   .input-scores-field.right {
     line-height: 22px;
+  }
+  .winner-field {
+    font-size: 12px;
+  }
+  .form-winner2 {
+    width: 166px;
   }
 }
 
@@ -2920,6 +3096,10 @@ p {
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 17px;
+  }
+  .button.enregistrer {
+    width: 60%;
+    font-size: 19px;
   }
   .nav-section {
     box-shadow: none;
@@ -3076,7 +3256,7 @@ p {
     -ms-flex: 1;
     flex: 1;
     font-size: 10px;
-    line-height: 10px;
+    line-height: 12px;
     text-align: right;
   }
   .grille-button {
@@ -3156,12 +3336,15 @@ p {
     display: -ms-flexbox;
     display: flex;
     width: 100%;
-    height: 46px;
+    height: 53px;
+    padding-right: 5px;
+    padding-left: 5px;
     -webkit-flex-wrap: nowrap;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
     font-size: 13px;
-    line-height: 13px;
+    line-height: 16px;
+    text-align: center;
   }
   .input-score.left {
     width: 80px;
@@ -3564,6 +3747,31 @@ p {
   .div-share {
     margin-top: 10px;
   }
+  .block-scores {
+    width: 30%;
+  }
+  .block-scores.after-groups {
+    width: 27%;
+  }
+  .team-name {
+    line-height: 19px;
+  }
+  .team-name.right {
+    line-height: 19px;
+  }
+  .input-scores-field {
+    width: 42px;
+    height: 42px;
+  }
+  .field-label {
+    width: 60%;
+  }
+  .input-field {
+    width: 60%;
+  }
+  .form-winner2 {
+    width: 172px;
+  }
 }
 
 @media (max-width: 479px) {
@@ -3637,6 +3845,9 @@ p {
     width: 100%;
     margin-top: 10px;
     margin-bottom: 5px;
+  }
+  .button.enregistrer {
+    width: 90%;
   }
   .nav-links {
     font-size: 18px;
@@ -3901,8 +4112,8 @@ p {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-    font-size: 9px;
-    line-height: 13px;
+    font-size: 10px;
+    line-height: 15px;
   }
   .input-score.left {
     width: 55px;
@@ -4460,9 +4671,11 @@ p {
     padding-right: 0px;
     padding-left: 0px;
     font-size: 20px;
+    cursor: pointer;
   }
   .link-button-sauver {
     width: 100%;
+    cursor: pointer;
   }
   .iphone {
     display: block;
@@ -4492,8 +4705,17 @@ p {
   .block-team.right {
     width: 30%;
   }
+  .block-scores {
+    width: 53%;
+  }
+  .block-scores.after-groups {
+    width: 40%;
+  }
   .block-team-and-score {
-    margin-bottom: 15px;
+    width: auto;
+    height: 70px;
+    margin-bottom: 0px;
+    cursor: pointer;
   }
   .team-flag {
     display: block;
@@ -4516,8 +4738,8 @@ p {
     -webkit-order: 1;
     -ms-flex-order: 1;
     order: 1;
-    font-size: 11px;
-    line-height: 14px;
+    font-size: 9px;
+    line-height: 11px;
     text-align: center;
   }
   .team-name.right {
@@ -4525,8 +4747,8 @@ p {
     -webkit-order: 1;
     -ms-flex-order: 1;
     order: 1;
-    font-size: 11px;
-    line-height: 14px;
+    font-size: 9px;
+    line-height: 11px;
     text-align: center;
   }
   .input-scores-field {
@@ -4548,8 +4770,30 @@ p {
     font-size: 25px;
     line-height: 25px;
   }
+  .scores-field.correct {
+    width: 45px;
+    height: 45px;
+  }
   .scores-field.incorrect {
+    width: 45px;
+    height: 45px;
     font-size: 25px;
+  }
+  .scores-field.incorrect.right {
+    width: 45px;
+    height: 45px;
+  }
+  .field-label {
+    width: 90%;
+  }
+  .input-field {
+    width: 90%;
+  }
+  .winner-field {
+    font-size: 12px;
+  }
+  .form-winner2 {
+    width: 159px;
   }
 }
 

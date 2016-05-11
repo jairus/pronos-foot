@@ -304,7 +304,7 @@
         <div class="w-col w-col-6 w-col-small-6 w-col-tiny-6">
           <div class="date-game">Groupe A | Mercredi 15 Juin, 18:00</div>
         </div>
-        <div class="w-col w-col-3 w-col-small-3 w-col-tiny-3 w-clearfix grille-column3"><img src="images/Suisse.png" class="logo-image right">
+        <div class="w-col w-col-3 w-col-small-3 w-col-tiny-3 w-clearfix grille-column3"><img src="assets/images/Suisse.png" class="logo-image right">
           <p class="nom-ville-text right">SUISSE</p>
         </div>
       </div>
@@ -357,7 +357,7 @@
           <p class="nom-ville-text left">ITALIE</p>
         </div>
         <div class="w-col w-col-6 w-col-small-6 w-col-tiny-6">
-          <div class="date-game">Groupe E | Vendredi 17 juin, 15:00</div>
+          <div class="date-game">Groupe E | Vendredi 17 Juin, 15:00</div>
         </div>
         <div class="w-col w-col-3 w-col-small-3 w-col-tiny-3 w-clearfix grille-column3"><img width="80" src="assets/images/Suede.png" class="logo-image right">
           <p class="nom-ville-text right">SUEDE</p>

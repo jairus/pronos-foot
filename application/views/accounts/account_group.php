@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
-<!-- Last Published: Tue May 03 2016 14:20:28 GMT+0000 (UTC) -->
+<!-- Last Published: Tue May 10 2016 14:21:45 GMT+0000 (UTC) -->
 <html data-wf-site="570cdf23fb4e011d1cf72234" data-wf-page="570d19ce3b95506f56790431">
 <head>
   <meta charset="utf-8">
@@ -41,7 +41,7 @@ Devenez le Champion de Pronos-Foot.com et Gagnez un iPhone 6.">
       <div class="w-clearfix picture-profile">
         <div class="w-widget w-widget-facebook facebook-sharing account">
           <iframe src="https://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.pronos-foot.com&amp;layout=button_count&amp;locale=en_US&amp;action=like&amp;show_faces=false&amp;share=false" scrolling="no" frameborder="0" allowtransparency="true" style="border: none; overflow: hidden; width: 90px; height: 20px;"></iframe>
-        </div><img width="50" src="<?php echo base_url();?>assets/images/picture-profile.jpg" class="image-profile"><a href="index.html" class="link-header">Se Déconnecter</a>
+        </div><img width="50" src="<?php echo base_url();?>assets/images/picture-profile.jpg" class="image-profile"><a href="index.html" class="link-header">Logout</a>
       </div>
     </div>
   </div>
@@ -85,7 +85,7 @@ Devenez le Champion de Pronos-Foot.com et Gagnez un iPhone 6.">
         <div class="w-row row-groups">
           <div class="w-col w-col-6 w-col-stack">
             <div class="block-groups">
-              <div class="group-name">GROUP A</div>
+              <div class="group-name">GROUPE A</div>
               <div class="block-team-and-score">
                 <div class="block-team">
                   <p class="team-name">FRANCE</p><img width="60" src="<?php echo base_url();?>assets/images/France.png" class="team-flag">
@@ -198,7 +198,7 @@ Devenez le Champion de Pronos-Foot.com et Gagnez un iPhone 6.">
           </div>
           <div class="w-col w-col-6 w-col-stack">
             <div class="block-groups">
-              <div class="group-name">GROUP B</div>
+              <div class="group-name">GROUPE B</div>
               <div class="block-team-and-score">
                 <div class="block-team">
                   <p class="team-name">GALLES</p><img width="60" src="<?php echo base_url();?>assets/images/Galles.png" class="team-flag">
@@ -343,7 +343,7 @@ Devenez le Champion de Pronos-Foot.com et Gagnez un iPhone 6.">
         <div class="w-row row-groups">
           <div class="w-col w-col-6 w-col-stack">
             <div class="block-groups">
-              <div class="group-name">GROUP C</div>
+              <div class="group-name">GROUPE C</div>
               <div class="block-team-and-score">
                 <div class="block-team">
                   <p class="team-name">POLOGNE</p><img width="60" src="<?php echo base_url();?>assets/images/Pologne.png" class="team-flag">
@@ -486,7 +486,7 @@ Devenez le Champion de Pronos-Foot.com et Gagnez un iPhone 6.">
           </div>
           <div class="w-col w-col-6 w-col-stack">
             <div class="block-groups">
-              <div class="group-name">GROUP D</div>
+              <div class="group-name">GROUPE D</div>
               <div class="block-team-and-score">
                 <div class="block-team">
                   <p class="team-name">TURQUIE</p><img width="60" src="<?php echo base_url();?>assets/images/Turquie.png" class="team-flag">
@@ -631,7 +631,7 @@ Devenez le Champion de Pronos-Foot.com et Gagnez un iPhone 6.">
         <div class="w-row row-groups">
           <div class="w-col w-col-6 w-col-stack">
             <div class="block-groups">
-              <div class="group-name">GROUP E</div>
+              <div class="group-name">GROUPE E</div>
               <div class="block-team-and-score">
                 <div class="block-team">
                   <p class="team-name">IRLANDE</p><img width="60" src="<?php echo base_url();?>assets/images/Irlande.png" class="team-flag">
@@ -774,7 +774,7 @@ Devenez le Champion de Pronos-Foot.com et Gagnez un iPhone 6.">
           </div>
           <div class="w-col w-col-6 w-col-stack">
             <div class="block-groups">
-              <div class="group-name">GROUP F</div>
+              <div class="group-name">GROUPE F</div>
               <div class="block-team-and-score">
                 <div class="block-team">
                   <p class="team-name">AUTRICHE</p><img width="60" src="<?php echo base_url();?>assets/images/Autriche.png" class="team-flag">
@@ -909,7 +909,7 @@ Devenez le Champion de Pronos-Foot.com et Gagnez un iPhone 6.">
                     </div>
                   </div>
                 </div>
-                <div class="block-team right"><img width="60" <?php echo base_url();?>assets/="<?php echo base_url();?>assets/images/Portugal.png" class="team-flag">
+                <div class="block-team right"><img width="60" src="<?php echo base_url();?>assets/images/Portugal.png" class="team-flag">
                   <p class="team-name">PORTUGAL</p>
                 </div>
               </div>
@@ -940,7 +940,7 @@ Devenez le Champion de Pronos-Foot.com et Gagnez un iPhone 6.">
             </div>
             <div class="w-col w-col-10 w-col-small-10 w-col-tiny-10">
               <p class="prix-text2">Trouvant le Vainqueur des Matchs:
-                <br><span class="note"><span class="_1n2">1 </span>Victoire de l’equipe à&nbsp;domicile &nbsp; | &nbsp;<span class="_1n2">N</span> Match nul &nbsp;| &nbsp;<span class="_1n2">2</span> Victoire de l’equipe à l’exterieur</span>
+                <br><span class="note">Victoire de l’equipe à&nbsp;domicile &nbsp; | &nbsp;Match nul &nbsp;| &nbsp;Victoire de l’equipe à l’exterieur</span>
               </p>
             </div>
           </div>
@@ -977,7 +977,7 @@ Devenez le Champion de Pronos-Foot.com et Gagnez un iPhone 6.">
     </div>
   </div>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-  <script type="text/javascript" src="<?php echo base_url();?>assets/js/webflow.js"></script>
+  <script type="text/javascript" src="<?php echo base_url();?>js/webflow.js"></script>
   <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
   <div id="fb-root"></div>
   <script>
