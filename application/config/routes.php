@@ -53,5 +53,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'homepage';
 $route['accounts/index'] = 'accounts/index';
 $route['accounts/group'] = 'accounts/account_group';
+$route['users/sign_in'] = 'users/sign_in';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
