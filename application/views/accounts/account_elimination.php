@@ -30,18 +30,18 @@ Devenez le Champion de Pronos-Foot.com et Gagnez un iPhone 6.">
     });
   </script>
   <script type="text/javascript" src="js/modernizr.js"></script>
-  <link rel="shortcut icon" type="image/x-icon" href="images/pronos-foot-logo-small.png">
-  <link rel="apple-touch-icon" href="images/pronos-foot-logo-large.png">
+  <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url();?>assets/images/pronos-foot-logo-small.png">
+  <link rel="apple-touch-icon" href="<?php echo base_url();?>assets/images/pronos-foot-logo-large.png">
 </head>
 <body>
   <div class="w-section nav-section">
     <div data-collapse="medium" data-animation="default" data-duration="400" class="w-nav navbar">
-      <a href="index.html" class="w-nav-brand w-clearfix"><img alt="Pronostics Foot Gratuit" width="80" src="images/Logo.png" class="logo-image header">
+      <a href="index.html" class="w-nav-brand w-clearfix"><img alt="Pronostics Foot Gratuit" width="80" src="<?php echo base_url();?>assets/images/Logo.png" class="logo-image header">
       </a>
       <div class="w-clearfix picture-profile">
         <div class="w-widget w-widget-facebook facebook-sharing account">
           <iframe src="https://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.pronos-foot.com&amp;layout=button_count&amp;locale=en_US&amp;action=like&amp;show_faces=false&amp;share=false" scrolling="no" frameborder="0" allowtransparency="true" style="border: none; overflow: hidden; width: 90px; height: 20px;"></iframe>
-        </div><img width="50" src="images/picture-profile.jpg" class="image-profile"><a href="index.html" class="link-header">Logout</a>
+        </div><img width="50" src="<?php echo base_url();?>assets/images/picture-profile.jpg" class="image-profile"><a href="index.html" class="link-header">Logout</a>
       </div>
     </div>
   </div>
@@ -49,7 +49,7 @@ Devenez le Champion de Pronos-Foot.com et Gagnez un iPhone 6.">
     <div class="header-div">
       <div class="w-container header-container">
         <div class="w-row header-row1">
-          <div class="w-col w-col-3 w-col-small-3 pronos-foot-column1"><img alt="Pronostics Foot Gratuit" width="187" src="images/Euro-2016.jpg" class="logo-image top">
+          <div class="w-col w-col-3 w-col-small-3 pronos-foot-column1"><img alt="Pronostics Foot Gratuit" width="187" src="<?php echo base_url();?>assets/images/Euro-2016.jpg" class="logo-image top">
           </div>
           <div class="w-col w-col-9 w-col-small-9 header-column2">
             <h1 class="header-title">PRONOS-FOOT.com</h1>
@@ -62,7 +62,7 @@ Devenez le Champion de Pronos-Foot.com et Gagnez un iPhone 6.">
         </div>
         <div class="div-share">
           <a class="w-inline-block facebook-link partager">
-            <div class="w-clearfix facebook-button partager"><img width="30" src="images/facebook-logo.png" class="fecebook-logo share">
+            <div class="w-clearfix facebook-button partager"><img width="30" src="<?php echo base_url();?>assets/images/facebook-logo.png" class="fecebook-logo share">
               <div class="facebook-text partager">Partager sur Facebook</div>
             </div>
           </a>
@@ -85,46 +85,46 @@ Devenez le Champion de Pronos-Foot.com et Gagnez un iPhone 6.">
         <div class="block-groups">
           <div class="block-team-and-score">
             <div class="block-team">
-              <p class="team-name">NORTHERN IRELAND</p><img width="60" src="images/France.png" class="team-flag">
+              <p class="team-name">NORTHERN IRELAND</p><img width="60" src="<?php echo base_url();?>assets/images/France.png" class="team-flag">
             </div>
             <div class="block-scores after-groups">
               <div class="scores-field"></div>
               <div class="text-versus">-</div>
               <div class="scores-field"></div>
             </div>
-            <div class="block-team right"><img width="60" src="images/Roumanie.png" class="team-flag">
+            <div class="block-team right"><img width="60" src="<?php echo base_url();?>assets/images/Roumanie.png" class="team-flag">
               <p class="team-name right">ROUMANIE</p>
             </div>
           </div>
           <div class="block-team-and-score">
             <div class="block-team">
-              <p class="team-name">NORTHERN IRELAND</p><img width="60" src="images/Albanie.png" class="team-flag">
+              <p class="team-name">NORTHERN IRELAND</p><img width="60" src="<?php echo base_url();?>assets/images/Albanie.png" class="team-flag">
             </div>
             <div class="block-scores after-groups">
               <div class="scores-field correct">3</div>
               <div class="text-versus">-</div>
               <div class="scores-field correct">2</div>
             </div>
-            <div class="block-team right"><img width="60" src="images/Suisse.png" class="team-flag">
+            <div class="block-team right"><img width="60" src="<?php echo base_url();?>assets/images/Suisse.png" class="team-flag">
               <p class="team-name">SUISSE</p>
             </div>
           </div>
           <div class="block-team-and-score">
             <div class="block-team">
-              <p class="team-name">ROUMANIE</p><img width="60" src="images/Roumanie.png" class="team-flag">
+              <p class="team-name">ROUMANIE</p><img width="60" src="<?php echo base_url();?>assets/images/Roumanie.png" class="team-flag">
             </div>
             <div class="w-clearfix block-scores after-groups">
               <div class="scores-field incorrect">2</div>
               <div class="text-versus">-</div>
               <div class="scores-field incorrect right">1</div>
             </div>
-            <div class="block-team right"><img width="60" src="images/Suisse.png" class="team-flag">
+            <div class="block-team right"><img width="60" src="<?php echo base_url();?>assets/images/Suisse.png" class="team-flag">
               <p class="team-name">SUISSE</p>
             </div>
           </div>
           <div class="block-team-and-score">
             <div class="block-team">
-              <p class="team-name">NORTHERN IRELAND</p><img width="60" src="images/France.png" class="team-flag">
+              <p class="team-name">NORTHERN IRELAND</p><img width="60" src="<?php echo base_url();?>assets/images/France.png" class="team-flag">
             </div>
             <div class="block-scores after-groups">
               <div class="w-form form-score">
@@ -141,7 +141,7 @@ Devenez le Champion de Pronos-Foot.com et Gagnez un iPhone 6.">
                 </div>
               </div>
             </div>
-            <div class="block-team right"><img width="60" src="images/Albanie.png" class="team-flag">
+            <div class="block-team right"><img width="60" src="<?php echo base_url();?>assets/images/Albanie.png" class="team-flag">
               <p class="team-name">ALBANIE</p>
             </div>
           </div>
@@ -162,7 +162,7 @@ Devenez le Champion de Pronos-Foot.com et Gagnez un iPhone 6.">
           </div>
           <div class="block-team-and-score">
             <div class="block-team">
-              <p class="team-name">ROUMANIE</p><img width="60" src="images/Roumanie.png" class="team-flag">
+              <p class="team-name">ROUMANIE</p><img width="60" src="<?php echo base_url();?>assets/images/Roumanie.png" class="team-flag">
             </div>
             <div class="block-scores after-groups">
               <div class="w-form form-score">
@@ -179,7 +179,7 @@ Devenez le Champion de Pronos-Foot.com et Gagnez un iPhone 6.">
                 </div>
               </div>
             </div>
-            <div class="block-team right"><img width="60" src="images/Albanie.png" class="team-flag">
+            <div class="block-team right"><img width="60" src="<?php echo base_url();?>assets/images/Albanie.png" class="team-flag">
               <p class="team-name">ALBANIE</p>
             </div>
           </div>
@@ -200,7 +200,7 @@ Devenez le Champion de Pronos-Foot.com et Gagnez un iPhone 6.">
           </div>
           <div class="block-team-and-score">
             <div class="block-team">
-              <p class="team-name">SUISSE</p><img width="60" src="images/Suisse.png" class="team-flag">
+              <p class="team-name">SUISSE</p><img width="60" src="<?php echo base_url();?>assets/images/Suisse.png" class="team-flag">
             </div>
             <div class="block-scores after-groups">
               <div class="w-form form-score">
@@ -217,7 +217,7 @@ Devenez le Champion de Pronos-Foot.com et Gagnez un iPhone 6.">
                 </div>
               </div>
             </div>
-            <div class="block-team right"><img width="60" src="images/France.png" class="team-flag">
+            <div class="block-team right"><img width="60" src="<?php echo base_url();?>assets/images/France.png" class="team-flag">
               <p class="team-name">FRANCE</p>
             </div>
           </div>
@@ -238,7 +238,7 @@ Devenez le Champion de Pronos-Foot.com et Gagnez un iPhone 6.">
           </div>
           <div class="block-team-and-score">
             <div class="block-team">
-              <p class="team-name">SUISSE</p><img width="60" src="images/Suisse.png" class="team-flag">
+              <p class="team-name">SUISSE</p><img width="60" src="<?php echo base_url();?>assets/images/Suisse.png" class="team-flag">
             </div>
             <div class="block-scores after-groups">
               <div class="w-form form-score">
@@ -255,7 +255,7 @@ Devenez le Champion de Pronos-Foot.com et Gagnez un iPhone 6.">
                 </div>
               </div>
             </div>
-            <div class="block-team right"><img width="60" src="images/France.png" class="team-flag">
+            <div class="block-team right"><img width="60" src="<?php echo base_url();?>assets/images/France.png" class="team-flag">
               <p class="team-name">FRANCE</p>
             </div>
           </div>
@@ -276,7 +276,7 @@ Devenez le Champion de Pronos-Foot.com et Gagnez un iPhone 6.">
           </div>
           <div class="block-team-and-score">
             <div class="block-team">
-              <p class="team-name">SUISSE</p><img width="60" src="images/Suisse.png" class="team-flag">
+              <p class="team-name">SUISSE</p><img width="60" src="<?php echo base_url();?>assets/images/Suisse.png" class="team-flag">
             </div>
             <div class="block-scores after-groups">
               <div class="w-form form-score">
@@ -293,7 +293,7 @@ Devenez le Champion de Pronos-Foot.com et Gagnez un iPhone 6.">
                 </div>
               </div>
             </div>
-            <div class="block-team right"><img width="60" src="images/France.png" class="team-flag">
+            <div class="block-team right"><img width="60" src="<?php echo base_url();?>assets/images/France.png" class="team-flag">
               <p class="team-name">FRANCE</p>
             </div>
           </div>
@@ -325,7 +325,7 @@ Devenez le Champion de Pronos-Foot.com et Gagnez un iPhone 6.">
   <div class="w-section prix-section">
     <div class="w-container prix-container">
       <div class="w-row">
-        <div class="w-col w-col-4 w-col-small-4 image-iphone-6"><img alt="Pronostics Foot Gratuit" width="157" src="images/IPhone6.png" class="iphone">
+        <div class="w-col w-col-4 w-col-small-4 image-iphone-6"><img alt="Pronostics Foot Gratuit" width="157" src="<?php echo base_url();?>assets/images/IPhone6.png" class="iphone">
         </div>
         <div class="w-col w-col-8 w-col-small-8">
           <h1 class="prix-title">Gagnez un iPhone&nbsp;6</h1>
@@ -357,7 +357,7 @@ Devenez le Champion de Pronos-Foot.com et Gagnez un iPhone 6.">
   <div class="w-section footer-section">
     <div class="w-container footer-container">
       <div class="w-row">
-        <div class="w-col w-col-5 w-clearfix footer-column1"><img alt="Pronostics Foot Gratuit" width="80" src="images/Logo.png" class="logo-image">
+        <div class="w-col w-col-5 w-clearfix footer-column1"><img alt="Pronostics Foot Gratuit" width="80" src="<?php echo base_url();?>assets/images/Logo.png" class="logo-image">
           <div class="footer-text disclaimer">© 2016 PRONOS-FOOT.COM&nbsp;Tous droits réservés.
             <br>Site de Pronostics de Football 100% Gratuit</div>
         </div>
