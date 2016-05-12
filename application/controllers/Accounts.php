@@ -11,13 +11,22 @@ class Accounts extends CI_Controller {
 
   public function index()
   {
-    $data = array();
-    $this->load->view('accounts/account_elimination', $data);
+    //$data = array();
+    //$this->load->view('accounts/account_elimination', $data);
   }
 
+  public function account_elimination()
+  {
+    $data['yield'] = 'accounts/account_elimination';
+    $data['points'] = '250'; // TEST
+
+    $this->load->view('accounts_layout', $data);
+  }
   public function account_group()
   {
-    $data = array();
-    $this->load->view('accounts/account_group', $data);
+    $data['yield'] = 'accounts/account_group';
+
+    $this->load->view('accounts_layout', $data);
+    //$this->load->view('accounts/account_group', $data);
   }
 }
