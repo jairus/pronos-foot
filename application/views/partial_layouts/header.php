@@ -1,3 +1,4 @@
+
 <head>
   <meta charset="utf-8">
   <title>PRONOS-FOOT.com | Site de Pronostics de Football 100% Gratuit avec Prix a Gagner</title>
@@ -17,11 +18,6 @@ Devenez le Champion de Pronos-Foot.com et Gagnez un iPhone 6.">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/normalize.css">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/webflow.css">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/pronos-football.webflow.css">
-
-  <link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="<?php echo base_url();?>assets/css/main.css">
-  <script src="<?php echo base_url();?>assets/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
   <script>
     WebFont.load({
@@ -31,6 +27,6 @@ Devenez le Champion de Pronos-Foot.com et Gagnez un iPhone 6.">
     });
   </script>
   <script type="text/javascript" src="<?php echo base_url();?>assets/js/modernizr.js"></script>
-  <link rel="shortcut icon" type="image/x-icon" href="assets/images/pronos-foot-logo-small.png">
-  <link rel="apple-touch-icon" href="assets/images/pronos-foot-logo-large.png">
+  <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url();?>assets/images/pronos-foot-logo-small.png">
+  <link rel="apple-touch-icon" href="<?php echo base_url();?>assets/images/pronos-foot-logo-large.png">
 </head>

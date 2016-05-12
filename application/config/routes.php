@@ -54,5 +54,6 @@ $route['default_controller'] = 'homepage';
 $route['accounts/index'] = 'accounts/index';
 $route['accounts/group'] = 'accounts/account_group';
 $route['users/sign_in'] = 'users/sign_in';
+$route['homepage/elimination'] = 'homepage/elimination';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
