@@ -44,14 +44,18 @@
 	<label>* Function</label>
 	<input type="text" class="form-control input-sm" name="function" value="<?php echo htmlentitiesX($record['function']); ?>">
 </div>
-				<button type="submit" class="btn btn-primary btn-sm m-t-10 bgm-green">Save</button>
-				<?php
-				if($record['id']){
-					?>
-					<button type="button" data-row-id="<?php echo htmlentitiesX($record['id']); ?>" class="command-delete btn btn-primary btn-sm m-t-10 bgm-red pull-right">Delete</button>
-					<?php
-				}
-				?>
+				<div class="row">
+					<div class="col-md-12 text-right">
+						<button type="submit" class="btn btn-primary btn-sm m-t-10 m-r-10 bgm-green ">Save</button>
+						<?php
+						if($record['id']){
+							?>
+							<button type="button" data-row-id="<?php echo htmlentitiesX($record['id']); ?>" class="command-delete btn btn-primary btn-sm m-t-10 bgm-red">Delete</button>
+							<?php
+						}
+						?>
+					</div>
+				</div>
 			</form>
 		</div>
 	</div>

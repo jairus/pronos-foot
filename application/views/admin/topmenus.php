@@ -1,5 +1,12 @@
 <li class="pull-right">
+	
 	<ul class="top-menu">
+		<li id="toggle-width">
+			<div class="toggle-switch">
+				<input id="tw-switch" type="checkbox" hidden="hidden">
+				<label for="tw-switch" class="ts-helper"></label>
+			</div>
+		</li>
 		<li class="hidden-xs">
 			<a href="<?php echo site_url("admin/logout"); ?>" title="Log out"><i class="tm-icon zmdi zmdi-power"></i></a>
 		</li>

@@ -10687,8 +10687,8 @@ h6 small,
   -webkit-transition: all;
   -o-transition: all;
   transition: all;
-  -webkit-transition-duration: 300ms;
-  transition-duration: 300ms;
+  -webkit-transition-duration: 200ms;
+  transition-duration: 200ms;
   z-index: 10;
   opacity: 0;
   filter: alpha(opacity=0);
