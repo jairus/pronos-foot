@@ -11,12 +11,12 @@ class matches_model extends CI_Model {
 		return $team[0];
 	}
 	public function getTeams(){
-		$sql = "select * from `teams` where `deleted`<>1";
+		$sql = "select * from `teams` where `deleted`<>1 order by `name` asc";
 		$teams = $this->db->query($sql)->result_array();
 		return $teams;
 	}
 	public function getGroups(){
-		$sql = "select * from `groups` where `deleted`<>1";
+		$sql = "select * from `groups` where `deleted`<>1 order by `name` asc";
 		$groups = $this->db->query($sql)->result_array();
 		return $groups;
 	}

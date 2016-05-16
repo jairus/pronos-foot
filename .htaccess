@@ -3,7 +3,7 @@ RewriteBase /
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule .* /pronos-foot/index.php/$0 [PT,L]  
+RewriteRule .* /index.php/$0 [PT,L]  
 
 
 

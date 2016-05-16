@@ -23,7 +23,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/pronos-foot/'; //add trailing slash
+if($_SERVER['HTTP_HOST']=='localhost'||$_SERVER['HTTP_HOST']=='pronos-foot.co'){
+	$config['base_url'] = 'http://pronos-foot.co/'; //add trailing slash
+}
+else{
+	$config['base_url'] = 'http://pronos-foot.com/'; //add trailing slash
+}
 
 /*
 |--------------------------------------------------------------------------
