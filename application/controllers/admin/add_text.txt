@@ -1,0 +1,4 @@
+<div class="form-group fg-line">
+	<label>[[required]][[field_label]]</label>
+	<input type="text" class="form-control input-sm" name="[[field]]" value="<?php echo htmlentitiesX($record['[[field]]']); ?>">
+</div>

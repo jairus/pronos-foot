@@ -1,0 +1,13 @@
+<div class="form-group fg-line">
+	<p class="f-500 m-b-10">[[required]][[field_label]]</p>
+	<div class="m-b-10" ><a target="_blank" href="<?php echo file_url($record['[[field]]']); ?>"><?php echo htmlentitiesX(basename($record['[[field]]'])); ?></a></div>
+	<div class="fileinput fileinput-new" data-provides="fileinput">
+		<span class="btn btn-primary btn-file m-r-10">
+			<span class="fileinput-new">Select file</span>
+			<span class="fileinput-exists">Change</span>
+			<input type="file" name="[[field]]">
+		</span>
+		<span class="fileinput-filename"></span>
+		<a href="#" class="close fileinput-exists" data-dismiss="fileinput">&times;</a>
+	</div>
+</div>

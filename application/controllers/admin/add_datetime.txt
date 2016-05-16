@@ -1,0 +1,13 @@
+<div class="form-group fg-line">
+	<p class="f-500 m-b-10">[[required]][[field_label]]</p>	
+	<div class="input-group form-group">	
+		<span class="input-group-addon"><i class="zmdi zmdi-calendar"></i></span>
+		<div class="dtp-container fg-line">
+			<input type='text' name="[[field]]" class="form-control date-time-picker" placeholder="Click here..." value="<?php 
+			if($record['[[field]]']){
+				echo date("m/d/Y h:i A", strtotime($record['[[field]]'])); 
+			}
+			?>">
+		</div>
+	</div>
+</div>

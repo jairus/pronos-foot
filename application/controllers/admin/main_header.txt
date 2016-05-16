@@ -1,0 +1,10 @@
+<th class="sortby" data-sortby="[[field]]" >[[field_label]] <?php
+	if($sortby=="[[field]]"){
+		if($sort=="asc"){
+			echo '&nbsp;<i class="zmdi zmdi-caret-up"></i>';
+		}
+		else{
+			echo '&nbsp;<i class="zmdi zmdi-caret-down"></i>';
+		}
+	}
+?></th>

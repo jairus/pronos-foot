@@ -1,0 +1,4 @@
+<div class="form-group fg-line">
+	<label>[[required]][[field_label]]</label>
+	<textarea class="form-control auto-size" placeholder="" name="[[field]]" ><?php echo htmlentitiesX($record['[[field]]']); ?></textarea>
+</div>

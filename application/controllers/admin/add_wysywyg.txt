@@ -1,0 +1,4 @@
+<div class="form-group fg-line">
+	<p class="f-500 m-b-10">[[required]][[field_label]]</p>	
+	<textarea class="html-editor" name="[[field]]"><?php echo $record['[[field]]']; ?></textarea>
+</div>

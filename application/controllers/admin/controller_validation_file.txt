@@ -1,0 +1,3 @@
+if (!isset($_FILES['[[field]]'])||!isset($_FILES['[[field]]']['error'])||$_FILES['[[field]]']['error']!=0){
+	$error = "Please input [[field_label]]";
+}

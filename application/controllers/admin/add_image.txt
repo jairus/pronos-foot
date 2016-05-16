@@ -1,0 +1,37 @@
+<div class="form-group fg-line">
+	<p class="f-500 m-b-10">[[required]][[field_label]]</p>		
+	<div class="fileinput fileinput-new" data-provides="fileinput">
+		<?php
+		if($record['[[field]]']){
+			?><div class="p-5"><a class="imagefileurl" data-src="<?php echo file_url($record['[[field]]']); ?>" target="_blank" href="<?php echo file_url($record['[[field]]']); ?>"><?php echo basename($record['[[field]]']); ?></a></div>
+			<div class="fileinput-preview thumbnail imagethumb" data-trigger="fileinput"><img src="<?php echo file_url($record['[[field]]']); ?>"></div><?php
+		}
+		else{
+			?><div class="fileinput-preview thumbnail" data-trigger="fileinput"></div><?php
+		}
+		?>
+		<div>
+			<span class="btn btn-info btn-file">
+				<?php
+				if($record['[[field]]']){
+					?><span class="fileinput-new">Select New Image</span><?php
+				}
+				else{
+					?><span class="fileinput-new">Select image</span><?php
+				}
+				?>
+				
+				<span class="fileinput-exists">Change</span>
+				<input type="file" name="[[field]]" class="theimagefile">
+			</span>
+			<?php
+			if($record['[[field]]']){
+				?><a href="#" class="btn btn-danger fileinput-exists imageuploadcancel">Cancel</a><?php
+			}
+			else{
+				?><a href="#" class="btn btn-danger fileinput-exists" data-dismiss="fileinput">Remove</a><?php
+			}
+			?>
+		</div>
+	</div>
+</div>
