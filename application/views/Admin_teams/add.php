@@ -2,12 +2,12 @@
 	<?php
 	if($record['id']){
 		?>
-		<h2>EDIT</h2>
+		<h2>EDIT TEAM</h2>
 		<?php
 	}
 	else{
 		?>
-		<h2>ADD</h2>
+		<h2>ADD TEAM</h2>
 		<?php
 	}
 	?>
@@ -34,54 +34,65 @@
 				?><form role="form" method="post" action="<?php echo site_url($controller); ?>/ajax_add" target="hiframe" enctype='multipart/form-data'><?php
 			}
 			?>
-				<div class="form-group fg-line">
-	<p class="f-500 m-b-10">Image</p>		
-	<div class="fileinput fileinput-new" data-provides="fileinput">
-		<?php
-		if($record['image']){
-			?><div class="p-5"><a class="imagefileurl" data-src="<?php echo file_url($record['image']); ?>" target="_blank" href="<?php echo file_url($record['image']); ?>"><?php echo basename($record['image']); ?></a></div>
-			<div class="fileinput-preview thumbnail imagethumb" data-trigger="fileinput"><img src="<?php echo file_url($record['image']); ?>"></div><?php
-		}
-		else{
-			?><div class="fileinput-preview thumbnail" data-trigger="fileinput"></div><?php
-		}
-		?>
-		<div>
-			<span class="btn btn-info btn-file">
-				<?php
-				if($record['image']){
-					?><span class="fileinput-new">Select New Image</span><?php
-				}
-				else{
-					?><span class="fileinput-new">Select image</span><?php
-				}
-				?>
-				
-				<span class="fileinput-exists">Change</span>
-				<input type="file" name="image" class="theimagefile">
-			</span>
-			<?php
-			if($record['image']){
-				?><a href="#" class="btn btn-danger fileinput-exists imageuploadcancel">Cancel</a><?php
-			}
-			else{
-				?><a href="#" class="btn btn-danger fileinput-exists" data-dismiss="fileinput">Remove</a><?php
-			}
-			?>
-		</div>
-	</div>
-</div><div class="form-group fg-line">
-	<label>* Name</label>
-	<input type="text" class="form-control input-sm" name="name" value="<?php echo htmlentitiesX($record['name']); ?>">
-</div>
-				<button type="submit" class="btn btn-primary btn-sm m-t-10 bgm-green">Save</button>
-				<?php
-				if($record['id']){
-					?>
-					<button type="button" data-row-id="<?php echo htmlentitiesX($record['id']); ?>" class="command-delete btn btn-primary btn-sm m-t-10 bgm-red pull-right">Delete</button>
-					<?php
-				}
-				?>
+				<div class="row">
+					<div class="col-md-3">
+						<div class="form-group fg-line">
+							<p class="f-500 m-b-10">Image</p>		
+							<div class="fileinput fileinput-new" data-provides="fileinput">
+							<?php
+							if($record['image']){
+								?><div class="p-5"><a class="imagefileurl" data-src="<?php echo file_url($record['image']); ?>" target="_blank" href="<?php echo file_url($record['image']); ?>"><?php echo basename($record['image']); ?></a></div>
+								<div class="fileinput-preview thumbnail imagethumb" data-trigger="fileinput"><img src="<?php echo file_url($record['image']); ?>"></div><?php
+							}
+							else{
+								?><div class="fileinput-preview thumbnail" data-trigger="fileinput"></div><?php
+							}
+							?>
+							<div>
+								<span class="btn btn-info btn-file">
+									<?php
+									if($record['image']){
+										?><span class="fileinput-new">Select New Image</span><?php
+									}
+									else{
+										?><span class="fileinput-new">Select image</span><?php
+									}
+									?>
+									
+									<span class="fileinput-exists">Change</span>
+									<input type="file" name="image" class="theimagefile">
+									</span>
+									<?php
+									if($record['image']){
+										?><a href="#" class="btn btn-danger fileinput-exists imageuploadcancel">Cancel</a><?php
+									}
+									else{
+										?><a href="#" class="btn btn-danger fileinput-exists" data-dismiss="fileinput">Remove</a><?php
+									}
+									?>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-9">
+						<div class="form-group fg-line">
+							<label>* Team Name</label>
+							<input type="text" class="form-control input-sm" name="name" value="<?php echo htmlentitiesX($record['name']); ?>">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 text-right">
+						<button type="submit" class="btn btn-primary btn-sm m-t-10 m-r-10 bgm-green ">Save</button>
+						<?php
+						if($record['id']){
+							?>
+							<button type="button" data-row-id="<?php echo htmlentitiesX($record['id']); ?>" class="command-delete btn btn-primary btn-sm m-t-10 bgm-red">Delete</button>
+							<?php
+						}
+						?>
+					</div>
+				</div>
 			</form>
 		</div>
 	</div>

@@ -2,12 +2,12 @@
 	<?php
 	if($record['id']){
 		?>
-		<h2>EDIT</h2>
+		<h2>EDIT GROUP</h2>
 		<?php
 	}
 	else{
 		?>
-		<h2>ADD</h2>
+		<h2>ADD GROUP</h2>
 		<?php
 	}
 	?>
@@ -36,7 +36,10 @@
 			?>	
 				<div class="row">
 					<div class="col-md-12">
-					[[forms]]
+					<div class="form-group fg-line">
+	<label>* Group Name</label>
+	<input type="text" class="form-control input-sm" name="name" value="<?php echo htmlentitiesX($record['name']); ?>">
+</div>
 					</div>
 				</div>
 				<div class="row">

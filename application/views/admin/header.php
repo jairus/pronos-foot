@@ -8,7 +8,7 @@
 			</div>
 		</li>
 		<li class="logo hidden-xs">
-			<a href="<?php echo site_url("admin"); ?>">Admin System</a>
+			<a href="<?php echo site_url("admin"); ?>">PRONOS FOOT ADMIN SYSTEM</a>
 		</li>
 		<?php
 		$this->load->view("admin/topmenus");

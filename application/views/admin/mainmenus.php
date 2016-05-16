@@ -54,6 +54,21 @@ $method = $this->router->fetch_method();
 			<li class="<?php if($controller=="admin" && $method=="createcms"){ echo "active"; } ?>"><a href="<?php echo site_url("admin/createcms"); ?>"><i class="zmdi zmdi-storage"></i> Create CMS</a></li>
 			<?php
 		}
+		if($this->user_validation->validate("Admin_teams", "index", false)){
+			?>
+			<li class="<?php if($controller=="Admin_teams"){ echo "active"; } ?>"><a href="<?php echo site_url("Admin_teams"); ?>"><i class="zmdi zmdi-flag"></i> Manage Teams</a></li>
+			<?php
+		}
+		if($this->user_validation->validate("Admin_groups", "index", false)){
+			?>
+			<li class="<?php if($controller=="Admin_groups"){ echo "active"; } ?>"><a href="<?php echo site_url("Admin_groups"); ?>"><i class="zmdi zmdi-assignment"></i> Manage Groups</a></li>
+			<?php
+		}
+		if($this->user_validation->validate("Admin_matches", "index", false)){
+			?>
+			<li class="<?php if($controller=="Admin_matches"){ echo "active"; } ?>"><a href="<?php echo site_url("Admin_matches"); ?>"><i class="zmdi zmdi-calendar-alt"></i> Manage Matches</a></li>
+			<?php
+		}
 		
 		/*
 		<li class="sub-menu">

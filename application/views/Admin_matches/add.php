@@ -2,12 +2,12 @@
 	<?php
 	if($record['id']){
 		?>
-		<h2>EDIT</h2>
+		<h2>EDIT MATCH</h2>
 		<?php
 	}
 	else{
 		?>
-		<h2>ADD</h2>
+		<h2>ADD MATCH</h2>
 		<?php
 	}
 	?>
@@ -33,10 +33,74 @@
 			else{
 				?><form role="form" method="post" action="<?php echo site_url($controller); ?>/ajax_add" target="hiframe" enctype='multipart/form-data'><?php
 			}
-			?>	
+			$teams = $this->matches_model->getTeams();
+			$t = count($teams);
+			?>
 				<div class="row">
 					<div class="col-md-12">
-					[[forms]]
+					<div class="form-group fg-line">
+						<label>* Team 1</label>
+						<select class="selectpicker" name="team1">
+						<?php
+						for($i=0; $i<$t; $i++){
+							if($teams[$i]['id']==$record['team1']){
+								echo "<option value='".$teams[$i]['id']."' selected>".$teams[$i]['name']."</option>";
+							}
+							else{
+								echo "<option value='".$teams[$i]['id']."'>".$teams[$i]['name']."</option>";
+							}
+						}
+						?>
+						</select>
+						<!--<input type="text" class="form-control input-sm" name="team1" value="<?php echo htmlentitiesX($record['team1']); ?>">-->
+					</div>
+					<div class="form-group fg-line">
+						<label>* Team 2</label>
+						<select class="selectpicker" name="team2">
+						<?php
+						for($i=0; $i<$t; $i++){
+							if($teams[$i]['id']==$record['team2']){
+								echo "<option value='".$teams[$i]['id']."' selected>".$teams[$i]['name']."</option>";
+							}
+							else{
+								echo "<option value='".$teams[$i]['id']."'>".$teams[$i]['name']."</option>";
+							}
+						}
+						?>
+						</select>
+						<!--<input type="text" class="form-control input-sm" name="team2" value="<?php echo htmlentitiesX($record['team2']); ?>">-->
+					</div>
+					<div class="form-group fg-line">
+						<p class="f-500 m-b-10">* Date & Time</p>	
+						<div class="input-group form-group">	
+							<span class="input-group-addon"><i class="zmdi zmdi-calendar"></i></span>
+							<div class="dtp-container fg-line">
+								<input type='text' name="datetime" class="form-control date-time-picker" placeholder="Click here..." value="<?php 
+								if($record['datetime']){
+									echo date("m/d/Y h:i A", strtotime($record['datetime'])); 
+								}
+								?>">
+							</div>
+						</div>
+					</div>
+					<div class="form-group fg-line">
+						<label>* Group Category</label>
+						<select class="selectpicker" name="category">
+						<?php
+						$groups = $this->matches_model->getGroups();
+						$t = count($groups);
+						for($i=0; $i<$t; $i++){
+							if($groups[$i]['name']==$record['category']){
+								echo "<option selected value='".$groups[$i]['name']."'>".$groups[$i]['name']."</option>";
+							}
+							else{
+								echo "<option value='".$groups[$i]['name']."'>".$groups[$i]['name']."</option>";
+							}
+						}
+						?>
+						</select>
+						<!--<input type="text" class="form-control input-sm" name="category" value="<?php echo htmlentitiesX($record['category']); ?>">-->
+					</div>
 					</div>
 				</div>
 				<div class="row">

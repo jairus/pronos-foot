@@ -7,7 +7,7 @@ $method = $this->router->fetch_method();
 }
 </style>
 <div class="block-header">
-	<h2>Manage Teams</h2>
+	<h2>Manage Matches</h2>
 	<ul class="actions">
 		<li>
 			<a href="<?php echo site_url($controller); ?>/add">
@@ -38,14 +38,14 @@ $method = $this->router->fetch_method();
 					if(isset($filters)&&is_array($filters)){
 						?> 
 						<select class="selectpicker" multiple name="filters[]">
-							<option value="name" <?php if(in_array("name", $filters)){ echo "selected"; } ?>>Name</option>	
+							<option value="team1" <?php if(in_array("team1", $filters)){ echo "selected"; } ?>>Team 1</option>	<option value="team2" <?php if(in_array("team2", $filters)){ echo "selected"; } ?>>Team 2</option>	<option value="category" <?php if(in_array("category", $filters)){ echo "selected"; } ?>>Group Category</option>	
 						</select>
 						<?php
 					}
 					else{
 						?>
 						<select class="selectpicker" multiple name="filters[]">
-							<option value="name">Name</option>	
+							<option value="team1">Team 1</option>	<option value="team2">Team 2</option>	<option value="category">Group Category</option>	
 						</select>
 						<?php
 					}
@@ -66,25 +66,27 @@ $method = $this->router->fetch_method();
 			<thead>
 				<tr>
 					<th>#</th>
-					<th class="sortby" data-sortby="image" >Image <?php
-	if($sortby=="image"){
-		if($sort=="asc"){
-			echo '&nbsp;<i class="zmdi zmdi-caret-up"></i>';
-		}
-		else{
-			echo '&nbsp;<i class="zmdi zmdi-caret-down"></i>';
-		}
-	}
-?></th><th class="sortby" data-sortby="name" >Name <?php
-	if($sortby=="name"){
-		if($sort=="asc"){
-			echo '&nbsp;<i class="zmdi zmdi-caret-up"></i>';
-		}
-		else{
-			echo '&nbsp;<i class="zmdi zmdi-caret-down"></i>';
-		}
-	}
-?></th>
+					<th>Team 1</th>
+					<th>Team 2</th>
+					<th class="sortby" data-sortby="datetime" >Date & Time <?php
+						if($sortby=="datetime"){
+							if($sort=="asc"){
+								echo '&nbsp;<i class="zmdi zmdi-caret-up"></i>';
+							}
+							else{
+								echo '&nbsp;<i class="zmdi zmdi-caret-down"></i>';
+							}
+						}
+					?></th><th class="sortby" data-sortby="category" >Group Category <?php
+						if($sortby=="category"){
+							if($sort=="asc"){
+								echo '&nbsp;<i class="zmdi zmdi-caret-up"></i>';
+							}
+							else{
+								echo '&nbsp;<i class="zmdi zmdi-caret-down"></i>';
+							}
+						}
+					?></th>
 					<th>&nbsp;</th>
 				</tr>
 			</thead>
@@ -100,8 +102,15 @@ $method = $this->router->fetch_method();
 						}
 						?>
 							<td><?php echo $start+$i+1; ?></td>
-							<td><img src='<?php echo file_url($records[$i]['image']);?>' style='max-width:40px' /></td>
-							<td><?php echo $records[$i]['name'];?></td>
+							<td><?php 
+								$team = $this->matches_model->getTeamById($records[$i]['team1']);
+								echo "<img src='".file_url($team['image'])."' style='max-width:40px'>&nbsp;".$team['name'];
+							?></td>
+							<td><?php
+								$team = $this->matches_model->getTeamById($records[$i]['team2']);
+								echo "<img src='".file_url($team['image'])."' style='max-width:40px'>&nbsp;".$team['name'];
+							?></td>
+							<td><?php echo date("M d, Y H:i:s", strtotime($records[$i]['datetime']));?></td><td><?php echo $records[$i]['category'];?></td>
 							<td class="text-left">
 							<a href="<?php echo site_url(); ?><?php echo $controller; ?>/edit/<?php echo $records[$i]['id']?>" class="btn btn-icon command-edit waves-effect waves-circle bgm-green"><span class="zmdi zmdi-edit"></span></a>
 							<a type="button" class="btn btn-icon command-delete waves-effect waves-circle bgm-red" data-row-id="<?php echo $records[$i]['id']?>"><span class="zmdi zmdi-delete"></span></a>

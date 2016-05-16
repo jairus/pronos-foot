@@ -7,7 +7,7 @@ $method = $this->router->fetch_method();
 }
 </style>
 <div class="block-header">
-	<h2>Manage Teams</h2>
+	<h2>Manage Groups</h2>
 	<ul class="actions">
 		<li>
 			<a href="<?php echo site_url($controller); ?>/add">
@@ -38,14 +38,14 @@ $method = $this->router->fetch_method();
 					if(isset($filters)&&is_array($filters)){
 						?> 
 						<select class="selectpicker" multiple name="filters[]">
-							<option value="name" <?php if(in_array("name", $filters)){ echo "selected"; } ?>>Name</option>	
+							<option value="name" <?php if(in_array("name", $filters)){ echo "selected"; } ?>>Group Name</option>	
 						</select>
 						<?php
 					}
 					else{
 						?>
 						<select class="selectpicker" multiple name="filters[]">
-							<option value="name">Name</option>	
+							<option value="name">Group Name</option>	
 						</select>
 						<?php
 					}
@@ -66,16 +66,7 @@ $method = $this->router->fetch_method();
 			<thead>
 				<tr>
 					<th>#</th>
-					<th class="sortby" data-sortby="image" >Image <?php
-	if($sortby=="image"){
-		if($sort=="asc"){
-			echo '&nbsp;<i class="zmdi zmdi-caret-up"></i>';
-		}
-		else{
-			echo '&nbsp;<i class="zmdi zmdi-caret-down"></i>';
-		}
-	}
-?></th><th class="sortby" data-sortby="name" >Name <?php
+					<th class="sortby" data-sortby="name" >Group Name <?php
 	if($sortby=="name"){
 		if($sort=="asc"){
 			echo '&nbsp;<i class="zmdi zmdi-caret-up"></i>';
@@ -100,7 +91,6 @@ $method = $this->router->fetch_method();
 						}
 						?>
 							<td><?php echo $start+$i+1; ?></td>
-							<td><img src='<?php echo file_url($records[$i]['image']);?>' style='max-width:40px' /></td>
 							<td><?php echo $records[$i]['name'];?></td>
 							<td class="text-left">
 							<a href="<?php echo site_url(); ?><?php echo $controller; ?>/edit/<?php echo $records[$i]['id']?>" class="btn btn-icon command-edit waves-effect waves-circle bgm-green"><span class="zmdi zmdi-edit"></span></a>
