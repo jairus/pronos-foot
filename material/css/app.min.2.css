@@ -1093,6 +1093,21 @@ html.ismobile .page-loader {
   filter: alpha(opacity=80);
 }
 
+[data-current-skin="darkgray"] {
+  background-color: #505050;
+}
+
+[data-current-skin="darkgray"] .ss-icon {
+  color: #505050;
+}
+
+@media (max-width: 767px) {
+  [data-current-skin="darkgray"] .ha-menu {
+    background: #505050;
+  }
+}
+
+
 [data-current-skin="lightblue"] {
   background-color: #03a9f4;
 }
