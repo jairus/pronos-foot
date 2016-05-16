@@ -1,13 +1,13 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 session_start();
-class [[controller]] extends CI_Controller {
+class Admin_teams extends CI_Controller {
 	var $table;
 	var $controller;
 	public function __construct(){
 		parent::__construct();
 		$this->load->database();
-		$this->table = "[[table]]";
-		$this->controller = "[[controller]]";
+		$this->table = "teams";
+		$this->controller = "Admin_teams";
 	}
 	public function index(){
 		$this->user_validation->validate($this->router->class, $this->router->method);
@@ -137,7 +137,10 @@ class [[controller]] extends CI_Controller {
 		$error = false;		
 		
 		/*start validation*/
-		[[validation]]
+		if ($_POST['name'] == ''){
+	$error = "Please input Name";
+}
+
 		/*end validation*/
 		
 		if(!$error){
@@ -159,7 +162,8 @@ class [[controller]] extends CI_Controller {
 			$sql = " update `".$table."` set ";
 			
 			/*start fields*/
-			[[fieldsstr]]
+			$sql .= "`name` = '".db_escape($_POST['name'])."'";
+
 			//for files
 			if(is_array($filepaths)){
 				foreach($filepaths as $key=>$value){
@@ -202,14 +206,18 @@ class [[controller]] extends CI_Controller {
 		$error = false;		
 				
 		/*start validation*/
-		[[validation]]
+		if ($_POST['name'] == ''){
+	$error = "Please input Name";
+}
+
 		/*end validation*/
 		
 		if(!$error){								
 			$sql = "insert into `".$table."` set ";
 			
 			/*start fields*/
-			[[fieldsstr]]
+			$sql .= "`name` = '".db_escape($_POST['name'])."'";
+			
 			//for files
 			if($_FILES){
 				pre($_FILES);

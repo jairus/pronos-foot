@@ -193,6 +193,8 @@ class Admin extends CI_Controller {
 			$main_contents = str_replace("[[filters1]]", $filters1, $main_contents);
 			$main_contents = str_replace("[[filters2]]", $filters2, $main_contents);
 			file_put_contents($views_dir."/main.php", $main_contents);
+			redirect(site_url("admin/createcms/?clear"), 'refresh');
+			exit();
 		}
 		$data['createcms'] = 1;
 		$data['content'] = $this->load->view("admin/createcms", $data, true);		
