@@ -171,7 +171,7 @@ class Homepage extends CI_Controller {
 									(
 										//if elims and you guessed the winner
 										$matchesarr[$i]['elimination'] 
-										&&$matchesarr[$i]['winner'] > 0 
+										&&$matchesarr[$i]['winner'] != ""
 										&& $matchesarr[$i]['winner']==$bets[$matchesarr[$i]['id']]['winner']
 									)
 								){
