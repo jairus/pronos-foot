@@ -67,15 +67,46 @@ $method = $this->router->fetch_method();
 				<tr>
 					<th>#</th>
 					<th class="sortby" data-sortby="name" >Group Name <?php
-	if($sortby=="name"){
-		if($sort=="asc"){
-			echo '&nbsp;<i class="zmdi zmdi-caret-up"></i>';
-		}
-		else{
-			echo '&nbsp;<i class="zmdi zmdi-caret-down"></i>';
-		}
-	}
-?></th>
+					if($sortby=="name"){
+						if($sort=="asc"){
+							echo '&nbsp;<i class="zmdi zmdi-caret-up"></i>';
+						}
+						else{
+							echo '&nbsp;<i class="zmdi zmdi-caret-down"></i>';
+						}
+					}
+					?></th>
+					<th class="sortby" data-sortby="exactscorepints" >Exact Score Points <?php
+					if($sortby=="exactscorepints"){
+						if($sort=="asc"){
+							echo '&nbsp;<i class="zmdi zmdi-caret-up"></i>';
+						}
+						else{
+							echo '&nbsp;<i class="zmdi zmdi-caret-down"></i>';
+						}
+					}
+					?></th>
+					<th class="sortby" data-sortby="winnerpoints" >Winner Points <?php
+					if($sortby=="winnerpoints"){
+						if($sort=="asc"){
+							echo '&nbsp;<i class="zmdi zmdi-caret-up"></i>';
+						}
+						else{
+							echo '&nbsp;<i class="zmdi zmdi-caret-down"></i>';
+						}
+					}
+					?></th>
+					<th class="sortby" data-sortby="elimination" >Type <?php
+					if($sortby=="elimination"){
+						if($sort=="asc"){
+							echo '&nbsp;<i class="zmdi zmdi-caret-up"></i>';
+						}
+						else{
+							echo '&nbsp;<i class="zmdi zmdi-caret-down"></i>';
+						}
+					}
+					?></th>
+					
 					<th>&nbsp;</th>
 				</tr>
 			</thead>
@@ -92,6 +123,16 @@ $method = $this->router->fetch_method();
 						?>
 							<td><?php echo $start+$i+1; ?></td>
 							<td><?php echo $records[$i]['name'];?></td>
+							<td><?php echo $records[$i]['exactscorepoints'];?></td>
+							<td><?php echo $records[$i]['winnerpoints'];?></td>
+							<td><?php 
+							if($records[$i]['elimination']){
+								echo "Elimination";
+							}
+							else{
+								echo "Non-elimination";
+							}
+							?></td>
 							<td class="text-left">
 							<a href="<?php echo site_url(); ?><?php echo $controller; ?>/edit/<?php echo $records[$i]['id']?>" class="btn btn-icon command-edit waves-effect waves-circle bgm-green"><span class="zmdi zmdi-edit"></span></a>
 							<a type="button" class="btn btn-icon command-delete waves-effect waves-circle bgm-red" data-row-id="<?php echo $records[$i]['id']?>"><span class="zmdi zmdi-delete"></span></a>

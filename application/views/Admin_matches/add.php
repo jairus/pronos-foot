@@ -37,70 +37,110 @@
 			$t = count($teams);
 			?>
 				<div class="row">
-					<div class="col-md-12">
-					<div class="form-group fg-line">
-						<label>* Team 1</label>
-						<select class="selectpicker" name="team1">
-						<?php
-						for($i=0; $i<$t; $i++){
-							if($teams[$i]['id']==$record['team1']){
-								echo "<option value='".$teams[$i]['id']."' selected>".$teams[$i]['name']."</option>";
-							}
-							else{
-								echo "<option value='".$teams[$i]['id']."'>".$teams[$i]['name']."</option>";
-							}
-						}
-						?>
-						</select>
-						<!--<input type="text" class="form-control input-sm" name="team1" value="<?php echo htmlentitiesX($record['team1']); ?>">-->
-					</div>
-					<div class="form-group fg-line">
-						<label>* Team 2</label>
-						<select class="selectpicker" name="team2">
-						<?php
-						for($i=0; $i<$t; $i++){
-							if($teams[$i]['id']==$record['team2']){
-								echo "<option value='".$teams[$i]['id']."' selected>".$teams[$i]['name']."</option>";
-							}
-							else{
-								echo "<option value='".$teams[$i]['id']."'>".$teams[$i]['name']."</option>";
-							}
-						}
-						?>
-						</select>
-						<!--<input type="text" class="form-control input-sm" name="team2" value="<?php echo htmlentitiesX($record['team2']); ?>">-->
-					</div>
-					<div class="form-group fg-line">
-						<p class="f-500 m-b-10">* Date & Time</p>	
-						<div class="input-group form-group">	
-							<span class="input-group-addon"><i class="zmdi zmdi-calendar"></i></span>
-							<div class="dtp-container fg-line">
-								<input type='text' name="datetime" class="form-control date-time-picker" placeholder="Click here..." value="<?php 
-								if($record['datetime']){
-									echo date("m/d/Y h:i A", strtotime($record['datetime'])); 
+					<div class="col-md-6">
+						<div class="form-group fg-line">
+							<label>* Team 1</label>
+							<select class="selectpicker" name="team1">
+							<?php
+							for($i=0; $i<$t; $i++){
+								if($teams[$i]['id']==$record['team1']){
+									echo "<option value='".$teams[$i]['id']."' selected>".$teams[$i]['name']."</option>";
 								}
-								?>">
+								else{
+									echo "<option value='".$teams[$i]['id']."'>".$teams[$i]['name']."</option>";
+								}
+							}
+							?>
+							</select>
+							<!--<input type="text" class="form-control input-sm" name="team1" value="<?php echo htmlentitiesX($record['team1']); ?>">-->
+						</div>
+						<div class="form-group fg-line">
+							<label>* Team 2</label>
+							<select class="selectpicker" name="team2">
+							<?php
+							for($i=0; $i<$t; $i++){
+								if($teams[$i]['id']==$record['team2']){
+									echo "<option value='".$teams[$i]['id']."' selected>".$teams[$i]['name']."</option>";
+								}
+								else{
+									echo "<option value='".$teams[$i]['id']."'>".$teams[$i]['name']."</option>";
+								}
+							}
+							?>
+							</select>
+							<!--<input type="text" class="form-control input-sm" name="team2" value="<?php echo htmlentitiesX($record['team2']); ?>">-->
+						</div>
+						<div class="form-group fg-line">
+							<p class="f-500 m-b-10">* Date & Time</p>	
+							<div class="input-group form-group">	
+								<span class="input-group-addon"><i class="zmdi zmdi-calendar"></i></span>
+								<div class="dtp-container fg-line">
+									<input type='text' name="datetime" class="form-control date-time-picker" placeholder="Click here..." value="<?php 
+									if($record['datetime']){
+										echo date("m/d/Y h:i A", strtotime($record['datetime'])); 
+									}
+									?>">
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="form-group fg-line">
-						<label>* Group Category</label>
-						<select class="selectpicker" name="category">
-						<?php
-						$groups = $this->matches_model->getGroups();
-						$t = count($groups);
-						for($i=0; $i<$t; $i++){
-							if($groups[$i]['name']==$record['category']){
-								echo "<option selected value='".$groups[$i]['name']."'>".$groups[$i]['name']."</option>";
+						<div class="form-group fg-line">
+							<label>* Group Category</label>
+							<select class="selectpicker" name="category">
+							<?php
+							$groups = $this->matches_model->getGroups();
+							$t = count($groups);
+							for($i=0; $i<$t; $i++){
+								if($groups[$i]['id']==$record['category']){
+									echo "<option selected value='".$groups[$i]['id']."'>".$groups[$i]['name']."</option>";
+								}
+								else{
+									echo "<option value='".$groups[$i]['id']."'>".$groups[$i]['name']."</option>";
+								}
 							}
-							else{
-								echo "<option value='".$groups[$i]['name']."'>".$groups[$i]['name']."</option>";
-							}
-						}
-						?>
-						</select>
-						<!--<input type="text" class="form-control input-sm" name="category" value="<?php echo htmlentitiesX($record['category']); ?>">-->
+							?>
+							</select>
+							<!--<input type="text" class="form-control input-sm" name="category" value="<?php echo htmlentitiesX($record['category']); ?>">-->
+						</div>
 					</div>
+					<div class="col-md-6">
+						<div class="form-group fg-line">
+							<label>* Team 1 Score</label>
+							<input type="text" class="form-control input-sm" name="team1score" value="<?php echo htmlentitiesX($record['team1score']); ?>">
+						</div>
+						<div class="form-group fg-line">
+							<label>* Team 2 Score</label>
+							<input type="text" class="form-control input-sm" name="team2score" value="<?php echo htmlentitiesX($record['team2score']); ?>">
+						</div>
+						<div class="form-group fg-line">
+							<label>Winner</label>
+							<select class="selectpicker" name="winner">
+							<option value="">Select a Winner</option> 
+							<option value="0" <?php if($record['winner']!="" && $record['winner']==0) { echo "selected"; } ?> >Draw</option> 
+							<?php
+							for($i=0; $i<$t; $i++){
+								if($teams[$i]['id']==$record['team1']||$teams[$i]['id']==$record['team2']){
+									if($teams[$i]['id']==$record['winner']){
+										echo "<option value='".$teams[$i]['id']."' selected>".$teams[$i]['name']."</option>";
+									}
+									else{
+										echo "<option value='".$teams[$i]['id']."'>".$teams[$i]['name']."</option>";
+									}
+								}
+							}
+							?>
+							</select>
+						</div>
+						<div class="form-group fg-line">
+							<label>Betting Status</label>
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="bettingclosed" value="1" <?php if($record['bettingclosed']=="1") echo "checked" ?>>
+									<i class="input-helper"></i>
+									Betting Closed
+								</label>
+							</div>
+						</div>
+
 					</div>
 				</div>
 				<div class="row">

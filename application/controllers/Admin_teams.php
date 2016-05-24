@@ -27,7 +27,7 @@ class Admin_teams extends CI_Controller {
 			$sql = "select * from `".$table."` where `deleted`<>1 order by `".db_escape($sortby)."` ".$sort." limit $start, $limit";
 		}
 		else{
-			$sql = "select * from `".$table."` where `deleted`<>1 order by id desc limit $start, $limit";
+			$sql = "select * from `".$table."` where `deleted`<>1 order by `name` asc limit $start, $limit";
 		}
 		$export_sql = md5($sql);
 		$_SESSION['export_sqls'][$export_sql] = $sql;
@@ -88,7 +88,7 @@ class Admin_teams extends CI_Controller {
 			$sql .= " order by `".db_escape($sortby)."` ".$sort." limit $start, $limit";
 		}
 		else{
-			$sql .= " order by id desc limit $start, $limit" ;
+			$sql .= " order by `name` asc limit $start, $limit" ;
 		}
 		
 

@@ -30,6 +30,7 @@ Devenez le Champion de Pronos-Foot.com et Gagnez un iPhone 6.">
     });
   </script>
   <script type="text/javascript" src="js/modernizr.js"></script>
+  <script src="<?php echo site_url(); ?>material/vendors/bower_components/jquery/dist/jquery.min.js"></script>
   <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url();?>assets/images/pronos-foot-logo-small.png">
   <link rel="apple-touch-icon" href="<?php echo base_url();?>assets/images/pronos-foot-logo-large.png">
 </head>
@@ -37,12 +38,12 @@ Devenez le Champion de Pronos-Foot.com et Gagnez un iPhone 6.">
   <!-- NAVIGATION -->
   <div class="w-section nav-section">
     <div data-collapse="medium" data-animation="default" data-duration="400" class="w-nav navbar">
-      <a href="index.html" class="w-nav-brand w-clearfix"><img alt="Pronostics Foot Gratuit" width="80" src="<?php echo base_url();?>assets/images/Logo.png" class="logo-image header">
+      <a href="<?php echo site_url(); ?>" class="w-nav-brand w-clearfix"><img alt="Pronostics Foot Gratuit" width="80" src="<?php echo base_url();?>assets/images/Logo.png" class="logo-image header">
       </a>
       <div class="w-clearfix picture-profile">
         <div class="w-widget w-widget-facebook facebook-sharing account">
           <iframe src="https://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.pronos-foot.com&amp;layout=button_count&amp;locale=en_US&amp;action=like&amp;show_faces=false&amp;share=false" scrolling="no" frameborder="0" allowtransparency="true" style="border: none; overflow: hidden; width: 90px; height: 20px;"></iframe>
-        </div><img width="50" src="<?php echo base_url();?>assets/images/picture-profile.jpg" class="image-profile"><a href="index.html" class="link-header">Logout</a>
+        </div><img width="50" src="<?php echo $_SESSION['profile']['image']; ?>" class="image-profile"><a href="<?php echo site_url("logout"); ?>" class="link-header">Logout</a>
       </div>
     </div>
   </div>

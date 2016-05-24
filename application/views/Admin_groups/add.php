@@ -35,11 +35,32 @@
 			}
 			?>	
 				<div class="row">
-					<div class="col-md-12">
-					<div class="form-group fg-line">
-	<label>* Group Name</label>
-	<input type="text" class="form-control input-sm" name="name" value="<?php echo htmlentitiesX($record['name']); ?>">
-</div>
+					<div class="col-md-6">
+						<div class="form-group fg-line">
+							<label>* Group Name</label>
+							<input type="text" class="form-control input-sm" name="name" value="<?php echo htmlentitiesX($record['name']); ?>">
+						</div>
+						<div class="form-group fg-line">
+							<label>Description</label>
+							<textarea class="form-control auto-size" placeholder="" name="description" ><?php echo htmlentitiesX($record['description']); ?></textarea>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group fg-line">
+							<label>* Exact Score Points</label>
+							<input type="text" class="form-control input-sm" name="exactscorepoints" value="<?php echo htmlentitiesX($record['exactscorepoints']); ?>">
+						</div>
+						<div class="form-group fg-line">
+							<label>* Winner Points</label>
+							<input type="text" class="form-control input-sm" name="winnerpoints" value="<?php echo htmlentitiesX($record['winnerpoints']); ?>">
+						</div>
+						<div class="form-group fg-line">
+							<label>Type</label>
+							<select class="selectpicker" name="elimination">
+							<option value='0' <?php if($record['elimination']==0){ echo "selected"; } ?> >Non-elimination</option>
+							<option value='1'<?php if($record['elimination']==1){ echo "selected"; } ?> >Elimination</option>
+							</select>
+						</div>
 					</div>
 				</div>
 				<div class="row">

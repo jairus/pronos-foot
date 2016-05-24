@@ -87,6 +87,9 @@ $method = $this->router->fetch_method();
 							}
 						}
 					?></th>
+					<th>Score</th>
+					<th>Winner</th>
+					<th>Betting Status</th>
 					<th>&nbsp;</th>
 				</tr>
 			</thead>
@@ -110,7 +113,34 @@ $method = $this->router->fetch_method();
 								$team = $this->matches_model->getTeamById($records[$i]['team2']);
 								echo "<img src='".file_url($team['image'])."' style='max-width:40px'>&nbsp;".$team['name'];
 							?></td>
-							<td><?php echo date("M d, Y H:i:s", strtotime($records[$i]['datetime']));?></td><td><?php echo $records[$i]['category'];?></td>
+							<td><?php 
+							echo ucwords(strftime('%A %d %B %Y, %H:%M', strtotime($records[$i]['datetime'])));
+							//echo date("M d, Y H:i:s l", strtotime($records[$i]['datetime']));?></td>
+							<td><a href="<?php echo site_url("Admin_groups/edit"); ?>/<?php echo $records[$i]['group_id']; ?>"><?php echo $records[$i]['category'];?></a></td>
+							<td><?php 
+								if($records[$i]['team1score']!=""){
+									echo $records[$i]['team1score']." - ".$records[$i]['team2score'];
+								}
+							?></td>
+							<td><?php 
+								if($records[$i]['winner']!=""){
+									if($records[$i]['winner']==0){
+										echo "DRAW";
+									}
+									else{
+										$team = $this->matches_model->getTeamById($records[$i]['winner']);
+										echo "<img src='".file_url($team['image'])."' style='max-width:40px'>&nbsp;".$team['name'];
+									}
+								}
+							?></td>
+							<td><?php 
+								if($records[$i]['bettingclosed']==1){
+									echo "CLOSED";
+								}
+								else{
+									echo "OPEN";
+								}
+							?></td>
 							<td class="text-left">
 							<a href="<?php echo site_url(); ?><?php echo $controller; ?>/edit/<?php echo $records[$i]['id']?>" class="btn btn-icon command-edit waves-effect waves-circle bgm-green"><span class="zmdi zmdi-edit"></span></a>
 							<a type="button" class="btn btn-icon command-delete waves-effect waves-circle bgm-red" data-row-id="<?php echo $records[$i]['id']?>"><span class="zmdi zmdi-delete"></span></a>

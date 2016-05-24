@@ -27,7 +27,7 @@ class Admin_groups extends CI_Controller {
 			$sql = "select * from `".$table."` where `deleted`<>1 order by `".db_escape($sortby)."` ".$sort." limit $start, $limit";
 		}
 		else{
-			$sql = "select * from `".$table."` where `deleted`<>1 order by id desc limit $start, $limit";
+			$sql = "select * from `".$table."` where `deleted`<>1 order by `name` asc limit $start, $limit";
 		}
 		$export_sql = md5($sql);
 		$_SESSION['export_sqls'][$export_sql] = $sql;
@@ -88,7 +88,7 @@ class Admin_groups extends CI_Controller {
 			$sql .= " order by `".db_escape($sortby)."` ".$sort." limit $start, $limit";
 		}
 		else{
-			$sql .= " order by id desc limit $start, $limit" ;
+			$sql .= " order by `name` asc limit $start, $limit" ;
 		}
 		
 
@@ -138,8 +138,14 @@ class Admin_groups extends CI_Controller {
 		
 		/*start validation*/
 		if ($_POST['name'] == ''){
-	$error = "Please input Group Name";
-}
+			$error = "Please input Group Name";
+		}
+		else if ($_POST['exactscorepoints'] == ''){
+			$error = "Please input Exact Score Points";
+		}
+		else if ($_POST['winnerpoints'] == ''){
+			$error = "Please input Winner Points";
+		}
 
 		/*end validation*/
 		
@@ -163,6 +169,10 @@ class Admin_groups extends CI_Controller {
 			
 			/*start fields*/
 			$sql .= "`name` = '".db_escape($_POST['name'])."'";
+			$sql .= ", `description` = '".db_escape($_POST['description'])."'";
+			$sql .= ", `elimination` = '".db_escape($_POST['elimination'])."'";
+			$sql .= ", `winnerpoints` = '".db_escape($_POST['winnerpoints'])."'";
+			$sql .= ", `exactscorepoints` = '".db_escape($_POST['exactscorepoints'])."'";
 
 			//for files
 			if(is_array($filepaths)){
@@ -207,8 +217,14 @@ class Admin_groups extends CI_Controller {
 				
 		/*start validation*/
 		if ($_POST['name'] == ''){
-	$error = "Please input Group Name";
-}
+			$error = "Please input Group Name";
+		}
+		else if ($_POST['exactscorepoints'] == ''){
+			$error = "Please input Exact Score Points";
+		}
+		else if ($_POST['winnerpoints'] == ''){
+			$error = "Please input Winner Points";
+		}
 
 		/*end validation*/
 		
@@ -217,6 +233,10 @@ class Admin_groups extends CI_Controller {
 			
 			/*start fields*/
 			$sql .= "`name` = '".db_escape($_POST['name'])."'";
+			$sql .= ", `description` = '".db_escape($_POST['description'])."'";
+			$sql .= ", `elimination` = '".db_escape($_POST['elimination'])."'";
+			$sql .= ", `winnerpoints` = '".db_escape($_POST['winnerpoints'])."'";
+			$sql .= ", `exactscorepoints` = '".db_escape($_POST['exactscorepoints'])."'";
 
 			//for files
 			if($_FILES){

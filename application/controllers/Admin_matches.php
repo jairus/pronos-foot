@@ -13,6 +13,7 @@ class Admin_matches extends CI_Controller {
 		$this->user_validation->validate($this->router->class, $this->router->method);
 		$table = $this->table;
 		$controller = $this->controller;
+		$data = array();
 		$start = $_GET['start'];
 		$start += 0;
 		$limit = 50;
@@ -23,11 +24,37 @@ class Admin_matches extends CI_Controller {
 		$sortby = $_GET['sortby'];
 		$sortby = str_replace("`", "", $sortby);
 		$sortby = trim($sortby);
+		$data['sortby'] = $sortby;
+		if($sortby=="category"){
+			$sortby = "groups`.`name";
+		}
 		if($sortby){
-			$sql = "select * from `".$table."` where `deleted`<>1 order by `".db_escape($sortby)."` ".$sort." limit $start, $limit";
+			$sql = "select 
+			`".$table."`.`id`,
+			`".$table."`.`team1`,
+			`".$table."`.`team2`,
+			`".$table."`.`team1score`,
+			`".$table."`.`team2score`,
+			`".$table."`.`winner`,
+			`".$table."`.`bettingclosed`,
+			`".$table."`.`datetime`,
+			`groups`.`name` as `category`,
+			`groups`.`id` as `group_id`
+			from `".$table."` left join `groups` on (`".$table."`.`category` = `groups`.`id` and `groups`.`deleted`<>1) where `".$table."`.`deleted`<>1 order by `".db_escape($sortby)."` ".$sort." limit $start, $limit";
 		}
 		else{
-			$sql = "select * from `".$table."` where `deleted`<>1 order by id desc limit $start, $limit";
+			$sql = "select 
+			`".$table."`.`id`,
+			`".$table."`.`team1`,
+			`".$table."`.`team2`,
+			`".$table."`.`team1score`,
+			`".$table."`.`team2score`,
+			`".$table."`.`winner`,
+			`".$table."`.`bettingclosed`,
+			`".$table."`.`datetime`,
+			`groups`.`name` as `category`,
+			`groups`.`id` as `group_id`
+			from `".$table."` left join `groups` on (`".$table."`.`category` = `groups`.`id` and `groups`.`deleted`<>1) where `".$table."`.`deleted`<>1 order by `datetime` asc limit $start, $limit";
 		}
 		$export_sql = md5($sql);
 		$_SESSION['export_sqls'][$export_sql] = $sql;
@@ -38,14 +65,12 @@ class Admin_matches extends CI_Controller {
 		$q = $this->db->query($sql);
 		$cnt = $q->result_array();
 		$pages = ceil($cnt[0]['cnt']/$limit);
-		
-		$data = array();
+
 		$data['records'] = $records;
 		$data['export_sql'] = $export_sql;
 		$data['pages'] = $pages;
 		$data['start'] = $start;
 		$data['sort'] = $sort;
-		$data['sortby'] = $sortby;
 		$data['limit'] = $limit;
 		$data['cnt'] = $cnt[0]['cnt'];
 		$data['controller'] = $controller;
@@ -56,6 +81,7 @@ class Admin_matches extends CI_Controller {
 		$this->user_validation->validate($this->router->class, $this->router->method);
 		$table = $this->table;
 		$controller = $this->controller;
+		$data = array();
 		$start = $_GET['start'];
 		$filters = $_GET['filters'];
 		$start += 0;
@@ -67,19 +93,34 @@ class Admin_matches extends CI_Controller {
 		$sortby = $_GET['sortby'];
 		$sortby = str_replace("`", "", $sortby);
 		$sortby = trim($sortby);
+		$data['sortby'] = $sortby;
 		$search = strtolower(trim($_GET['search']));
 		$searchx = trim($_GET['search']);
 		
-		$sql = "select * from `".$table."`  where `deleted`<>1 ";
+		$sql = "select 
+		`".$table."`.`id`,
+		`".$table."`.`team1`,
+		`".$table."`.`team2`,
+		`".$table."`.`team1score`,
+		`".$table."`.`team2score`,
+		`".$table."`.`winner`,
+		`".$table."`.`bettingclosed`,
+		`".$table."`.`datetime`,
+		`groups`.`name` as `category`,
+		`groups`.`id` as `group_id`
+		from `".$table."` left join `groups` on (`".$table."`.`category` = `groups`.`id` and `groups`.`deleted`<>1)  where `".$table."`.`deleted`<>1 ";
 		if($search != ''){
 			if(is_array($filters)){
 				$sql .= "and (0 ";
 				foreach($filters as $filter){
 					if($filter=="team1"){
-						$sql .= "or (`team1` in (select `id` from `teams` where `deleted`<>1 and lower(`name`) like '%".db_escape($search)."%'))";
+						$sql .= "or (`".$table."`.`team1` in (select `id` from `teams` where `deleted`<>1 and lower(`name`) like '%".db_escape($search)."%'))";
 					}
 					else if($filter=="team2"){
-						$sql .= "or (`team2` in (select `id` from `teams` where `deleted`<>1 and lower(`name`) like '%".db_escape($search)."%'))";
+						$sql .= "or (`".$table."`.`team2` in (select `id` from `teams` where `deleted`<>1 and lower(`name`) like '%".db_escape($search)."%'))";
+					}
+					else if($filter=="category"){
+						$sql .= "or (`".$table."`.`category` in (select `id` from `groups` where `deleted`<>1 and lower(`name`) like '%".db_escape($search)."%'))";
 					}
 					else{
 						$filter = str_replace("`", "", $filter);
@@ -92,11 +133,17 @@ class Admin_matches extends CI_Controller {
 				$sql .= ")";
 			}
 		}
-		if($sortby){
-			$sql .= " order by `".db_escape($sortby)."` ".$sort." limit $start, $limit";
+		if($sortby=="category"){
+			$sortby = "groups`.`name";	
 		}
 		else{
-			$sql .= " order by id desc limit $start, $limit" ;
+			$sortby = db_escape($sortby);
+		}
+		if($sortby){
+			$sql .= " order by `".$sortby."` ".$sort." limit $start, $limit";
+		}
+		else{
+			$sql .= " order by `datetime` asc limit $start, $limit" ;
 		}
 		
 
@@ -123,13 +170,12 @@ class Admin_matches extends CI_Controller {
 		$cnt = $q->result_array();
 		$pages = ceil($cnt[0]['cnt']/$limit);
 		
-		$data = array();
+		
 		$data['records'] = $records;		
 		$data['export_sql'] = $export_sql;
 		$data['pages'] = $pages;
 		$data['start'] = $start;
 		$data['sort'] = $sort;
-		$data['sortby'] = $sortby;
 		$data['limit'] = $limit;
 		$data['search'] = $searchx;
 		$data['filters'] = $filters;
@@ -146,17 +192,17 @@ class Admin_matches extends CI_Controller {
 		
 		/*start validation*/
 		if ($_POST['team1'] == ''){
-	$error = "Please input Team 1";
-}
- else if ($_POST['team2'] == ''){
-	$error = "Please input Team 2";
-}
- else if ($_POST['datetime'] == ''){
-	$error = "Please input Date & Time";
-}
- else if ($_POST['category'] == ''){
-	$error = "Please input Group Category";
-}
+			$error = "Please input Team 1";
+		}
+		 else if ($_POST['team2'] == ''){
+			$error = "Please input Team 2";
+		}
+		 else if ($_POST['datetime'] == ''){
+			$error = "Please input Date & Time";
+		}
+		 else if ($_POST['category'] == ''){
+			$error = "Please input Group Category";
+		}
 
 		/*end validation*/
 		
@@ -180,9 +226,28 @@ class Admin_matches extends CI_Controller {
 			
 			/*start fields*/
 			$sql .= "`team1` = '".db_escape($_POST['team1'])."'";
-$sql .= " ,`team2` = '".db_escape($_POST['team2'])."'";
-$sql .= " ,`datetime` = '".db_escape(date("Y-m-d H:i:s", strtotime($_POST['datetime'])))."'";
-$sql .= " ,`category` = '".db_escape($_POST['category'])."'";
+			$sql .= " ,`team2` = '".db_escape($_POST['team2'])."'";
+			$sql .= " ,`bettingclosed` = '".db_escape($_POST['bettingclosed'])."'";
+			if(trim($_POST['team1score'])!=""){
+				$sql .= " ,`team1score` = '".db_escape($_POST['team1score'])."'";
+			}
+			else{
+				$sql .= " ,`team1score` = NULL ";
+			}
+			if(trim($_POST['team2score'])!=""){
+				$sql .= " ,`team2score` = '".db_escape($_POST['team2score'])."'";
+			}
+			else{
+				$sql .= " ,`team2score` = NULL ";
+			}
+			if(trim($_POST['winner'])!=""){
+				$sql .= " ,`winner` = '".db_escape($_POST['winner'])."'";
+			}
+			else{
+				$sql .= " ,`winner` = NULL ";
+			}
+			$sql .= " ,`datetime` = '".db_escape(date("Y-m-d H:i:s", strtotime($_POST['datetime'])))."'";
+			$sql .= " ,`category` = '".db_escape($_POST['category'])."'";
 
 			//for files
 			if(is_array($filepaths)){
@@ -227,17 +292,17 @@ $sql .= " ,`category` = '".db_escape($_POST['category'])."'";
 				
 		/*start validation*/
 		if ($_POST['team1'] == ''){
-	$error = "Please input Team 1";
-}
- else if ($_POST['team2'] == ''){
-	$error = "Please input Team 2";
-}
- else if ($_POST['datetime'] == ''){
-	$error = "Please input Date & Time";
-}
- else if ($_POST['category'] == ''){
-	$error = "Please input Group Category";
-}
+			$error = "Please input Team 1";
+		}
+		 else if ($_POST['team2'] == ''){
+			$error = "Please input Team 2";
+		}
+		 else if ($_POST['datetime'] == ''){
+			$error = "Please input Date & Time";
+		}
+		 else if ($_POST['category'] == ''){
+			$error = "Please input Group Category";
+		}
 
 		/*end validation*/
 		
@@ -246,9 +311,28 @@ $sql .= " ,`category` = '".db_escape($_POST['category'])."'";
 			
 			/*start fields*/
 			$sql .= "`team1` = '".db_escape($_POST['team1'])."'";
-$sql .= " ,`team2` = '".db_escape($_POST['team2'])."'";
-$sql .= " ,`datetime` = '".db_escape(date("Y-m-d H:i:s", strtotime($_POST['datetime'])))."'";
-$sql .= " ,`category` = '".db_escape($_POST['category'])."'";
+			$sql .= " ,`team2` = '".db_escape($_POST['team2'])."'";
+			$sql .= " ,`bettingclosed` = '".db_escape($_POST['bettingclosed'])."'";
+			if(trim($_POST['team1score'])!=""){
+				$sql .= " ,`team1score` = '".db_escape($_POST['team1score'])."'";
+			}
+			else{
+				$sql .= " ,`team1score` = NULL ";
+			}
+			if(trim($_POST['team2score'])!=""){
+				$sql .= " ,`team2score` = '".db_escape($_POST['team2score'])."'";
+			}
+			else{
+				$sql .= " ,`team2score` = NULL ";
+			}
+			if(trim($_POST['winner'])!=""){
+				$sql .= " ,`winner` = '".db_escape($_POST['winner'])."'";
+			}
+			else{
+				$sql .= " ,`winner` = NULL ";
+			}
+			$sql .= " ,`datetime` = '".db_escape(date("Y-m-d H:i:s", strtotime($_POST['datetime'])))."'";
+			$sql .= " ,`category` = '".db_escape($_POST['category'])."'";
 
 			//for files
 			if($_FILES){

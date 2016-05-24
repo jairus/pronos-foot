@@ -7,7 +7,7 @@
         </div>
         <div class="w-col w-col-4">
           <div class="footer-text middle">INSCRIVEZ-VOUS MAINTENANT !</div>
-          <a href="/my-account" data-ix="open-lightbox" class="w-inline-block w-clearfix facebook-link footer">
+          <a href="<?php echo $_SESSION['fbloginurl']; ?>" data-ix="open-lightbox" class="w-inline-block w-clearfix facebook-link footer">
             <div class="w-clearfix facebook-button small footer"><img width="20" src="<?php echo base_url();?>assets/images/facebook-logo.png" class="fecebook-logo footer">
               <div class="facebook-text footer">Se Connecter avec Facebook</div>
             </div>
