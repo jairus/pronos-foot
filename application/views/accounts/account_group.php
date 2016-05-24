@@ -47,8 +47,14 @@ if(!count($matches)){
 						  <?php
 						  //pre($matchesarr[$i]);
 						  //pre($bets[$matchesarr[$i]['id']]);
+							$matchtime = strtotime($matchesarr[$i]['datetime']);
+							$expired = false;
+							if($matchtime-time() < 3600){
+								$expired = true;
+							}
+						
 						  if(!$bets[$matchesarr[$i]['id']]){
-							  if($matchesarr[$i]['bettingclosed']!="1"){
+							  if($matchesarr[$i]['bettingclosed']!="1"&&!$expired ){
 								  ?>
 								  <input maxlength="2"  type="text" name="team1score[<?php echo $matchesarr[$i]['id'] ?>]" class="w-input input-scores-field">
 								  <div class="text-versus">-</div>
@@ -120,7 +126,7 @@ if(!count($matches)){
 									
 							}
 							else{
-								if($matchesarr[$i]['bettingclosed']!="1"){
+								if($matchesarr[$i]['bettingclosed']!="1"&&!$expired){
 									?>
 									<input maxlength="2"  type="text" value="<?php echo $bets[$matchesarr[$i]['id']]['team1score'] ?>" name="team1score[<?php echo $matchesarr[$i]['id'] ?>]" class="w-input input-scores-field">
 									<div class="text-versus">-</div>

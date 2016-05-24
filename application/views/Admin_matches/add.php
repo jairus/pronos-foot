@@ -117,6 +117,7 @@
 							<option value="">Select a Winner</option> 
 							<option value="0" <?php if($record['winner']!="" && $record['winner']==0) { echo "selected"; } ?> >Draw</option> 
 							<?php
+							$t = count($teams);
 							for($i=0; $i<$t; $i++){
 								if($teams[$i]['id']==$record['team1']||$teams[$i]['id']==$record['team2']){
 									if($teams[$i]['id']==$record['winner']){
