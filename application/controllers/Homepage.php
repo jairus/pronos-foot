@@ -46,9 +46,11 @@ class Homepage extends CI_Controller {
 							`match_id`='".db_escape($match_id)."',
 							`profile_id`='".db_escape($_SESSION['profile']['id'])."',
 							`team1score`='".db_escape($team1score[$match_id])."',
-							`team2score`='".db_escape($team2score[$match_id])."',
-							`winner`='".db_escape($winner[$match_id])."'
-							where `id`='".$bets[0]['id']."'
+							`team2score`='".db_escape($team2score[$match_id])."'";
+							if($winner[$match_id]){
+								$sql .=" , `winner`='".db_escape($winner[$match_id])."'";
+							}
+							$sql .=" where `id`='".$bets[0]['id']."'
 							";
 							$this->db->query($sql);
 							//echo $sql;
@@ -59,9 +61,11 @@ class Homepage extends CI_Controller {
 							`match_id`='".db_escape($match_id)."',
 							`profile_id`='".db_escape($_SESSION['profile']['id'])."',
 							`team1score`='".db_escape($team1score[$match_id])."',
-							`team2score`='".db_escape($team2score[$match_id])."',
-							`winner`='".db_escape($winner[$match_id])."',
-							`dateadded` = NOW()
+							`team2score`='".db_escape($team2score[$match_id])."',";
+							if($winner[$match_id]){
+								$sql .=" `winner`='".db_escape($winner[$match_id])."',";
+							}
+							$sql .=" `dateadded` = NOW()
 							";
 							$this->db->query($sql);
 						}
