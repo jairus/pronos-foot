@@ -16,6 +16,7 @@ $route['createcms/(:any)'] = "createcms/$1";
 $route['default_controller'] = 'homepage';
 // $route['accounts/index'] = 'accounts/index';
 $route['placebets'] = 'homepage/placebets';
+$route['cgu'] = 'homepage/cgu';
 $route['logout'] = 'homepage/logout';
 $route['accounts'] = 'accounts/account_group';
 $route['accounts/group'] = 'accounts/account_group';

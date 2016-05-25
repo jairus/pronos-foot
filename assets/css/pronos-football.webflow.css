@@ -207,6 +207,20 @@ p {
   background-color: #000;
 }
 
+.nav-section.account {
+  display: block;
+  margin-top: 0px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
 .nav-links {
   margin-top: 10px;
   padding-right: 0px;
@@ -1010,6 +1024,12 @@ p {
   clear: none;
 }
 
+.nav-menu.account {
+  margin-top: 35px;
+  float: right;
+  clear: none;
+}
+
 .grille-column2-score {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1124,12 +1144,13 @@ p {
 
 .facebook-sharing.account {
   margin-top: 15px;
+  margin-right: 0px;
 }
 
 .picture-profile {
   display: block;
-  margin-top: 25px;
-  margin-right: 10px;
+  margin-top: 30px;
+  margin-right: 0px;
   margin-left: 30px;
   float: right;
   clear: none;
@@ -2466,6 +2487,38 @@ p {
   margin-left: auto;
 }
 
+.gui-copy {
+  margin-top: 12px;
+  font-family: Raleway, sans-serif;
+  color: #fff;
+  font-size: 15px;
+  line-height: 21px;
+}
+
+.link-gui {
+  color: #f79e00;
+}
+
+.section-cgu {
+  margin-top: 100px;
+  background-color: #fff;
+}
+
+.container-cgu {
+  padding-bottom: 80px;
+}
+
+.cgu-copy {
+  margin-top: 30px;
+  font-family: Raleway, sans-serif;
+}
+
+.cgu-title {
+  color: #000;
+  font-size: 16px;
+  font-weight: 700;
+}
+
 @media (max-width: 991px) {
   .button {
     width: 222px;
@@ -2766,6 +2819,10 @@ p {
     position: absolute;
     margin-top: -20px;
   }
+  .nav-menu.account {
+    position: absolute;
+    margin-top: 0px;
+  }
   .menu-button {
     margin-top: 30px;
     margin-right: 10px;
@@ -2782,7 +2839,8 @@ p {
   }
   .menu-button.home {
     display: inline-block;
-    margin-top: 22px;
+    margin-top: 25px;
+    float: right;
     clear: right;
     font-size: 30px;
   }
@@ -2804,13 +2862,13 @@ p {
     right: 0px;
     bottom: 0px;
     display: block;
-    margin-top: 17px;
+    margin-top: 20px;
     margin-right: 60px;
     float: right;
     clear: left;
   }
   .picture-profile {
-    margin-top: 26px;
+    margin-top: 25px;
     margin-right: 20px;
     float: right;
     clear: none;
@@ -2963,6 +3021,7 @@ p {
   }
   .anchor.number3 {
     top: 1346px;
+    margin-top: -151px;
   }
   .anchor.number2 {
     top: 726px;
@@ -3849,6 +3908,9 @@ p {
   .button.enregistrer {
     width: 90%;
   }
+  .nav-section.account {
+    position: fixed;
+  }
   .nav-links {
     font-size: 18px;
     line-height: 18px;
@@ -3876,7 +3938,16 @@ p {
     flex: 0 auto;
   }
   .logo-image.header {
+    position: static;
+    display: block;
     margin-left: 0px;
+    float: left;
+  }
+  .logo-image.header.account {
+    width: 70px;
+    margin-top: 15px;
+    margin-right: 0px;
+    float: none;
   }
   .logo-image.favorite-club {
     width: 149px;
@@ -4212,7 +4283,12 @@ p {
   }
   .menu-button.home {
     margin-top: 25px;
+    margin-right: 5px;
+    margin-left: 3px;
     clear: right;
+  }
+  .menu-button.home.w--open {
+    margin-right: 5px;
   }
   .pronos-foot-column1 {
     position: static;
@@ -4268,6 +4344,9 @@ p {
     margin-left: auto;
     padding-top: 0px;
   }
+  .sharing-and-register {
+    margin-top: 15px;
+  }
   .facebook-sharing {
     margin-top: 22px;
     margin-right: 10px;
@@ -4280,8 +4359,9 @@ p {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    margin-top: 25px;
-    margin-right: 10px;
+    margin-top: 23px;
+    margin-right: 0px;
+    margin-left: 0px;
     float: right;
     -webkit-box-align: center;
     -webkit-align-items: center;
@@ -4289,8 +4369,9 @@ p {
     align-items: center;
   }
   .image-profile {
+    display: block;
     width: 50px;
-    float: right;
+    float: left;
   }
   .image-profile.poduim.position2 {
     width: 50px;
@@ -4352,6 +4433,9 @@ p {
   }
   .error-message.version3 {
     padding-top: 0px;
+  }
+  .link-header {
+    float: none;
   }
   .link-header.w--current {
     display: -webkit-box;
@@ -4794,6 +4878,12 @@ p {
   }
   .form-winner2 {
     width: 159px;
+  }
+  .gui-copy {
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 14px;
+    line-height: 18px;
   }
 }
 

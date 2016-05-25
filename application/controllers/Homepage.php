@@ -19,6 +19,7 @@ class Homepage extends CI_Controller {
 			}
 			*/
 			if($error==""){
+				$empty = true;
 				foreach($team1score as $match_id => $value){
 					$sql = "select `id` from `bets` where `match_id`='".db_escape($match_id)."' and `profile_id`='".db_escape($_SESSION['profile']['id'])."'";
 					$bets = $this->db->query($sql)->result_array();
@@ -32,10 +33,19 @@ class Homepage extends CI_Controller {
 						//$refresh = true;
 						continue;
 					}
-					else if($team1score[$match_id]==""||$team2score[$match_id]==""){
+					else if(
+						($team1score[$match_id]==""&&$team2score[$match_id]!="")
+						||
+						($team1score[$match_id]!=""&&$team2score[$match_id]=="")
+					){
 						$error = "Vous devez pronostiquer le résultat d'au moins un match.";
 						continue;
 					}
+					
+					if($team1score[$match_id]!=""||$team2score[$match_id]!=""){
+						$empty = false;
+					}
+					
 					if(
 						$team1score[$match_id]!=""&&$match[0]['bettingclosed']<>1
 						&&$team1score[$match_id]!=""
@@ -71,6 +81,9 @@ class Homepage extends CI_Controller {
 						}
 					}
 				}
+				if($empty){
+					$error = "Vous devez pronostiquer le résultat d'au moins un match.";
+				}
 			}
 		}
 		
@@ -96,7 +109,9 @@ class Homepage extends CI_Controller {
 			?>
 			<script>
 			parent.jQuery(".errormessage").hide();
-			alert("Vos pronostics ont été enregistrés avec succès");
+			//alert("Vos pronostics ont été enregistrés avec succès");
+			parent.jQuery(".errormessage").html("<span style='color:#11b62b !important'>Vos pronostics ont été enregistrés avec succès</a>");
+			parent.jQuery(".errormessage").fadeIn(200);
 			//parent.location = "<?php echo site_url(); ?>";
 			</script>
 			<?php
@@ -107,7 +122,7 @@ class Homepage extends CI_Controller {
 		$data = array();
 		if($_SESSION['profile']){
 			//get matches
-			$sql = "select `matches`.*, `groups`.`winnerpoints`, `groups`.`exactscorepoints`, `groups`.`elimination` as `elimination`, `groups`.`name` as `category` from `matches` left join `groups` on (`groups`.`id`=`matches`.`category` and `groups`.`deleted`<>1) where `matches`.`deleted`<>1 order by `groups`.`name` asc";
+			$sql = "select `matches`.*, `groups`.`winnerpoints`, `groups`.`exactscorepoints`, `groups`.`elimination` as `elimination`, `groups`.`name` as `category` from `matches` left join `groups` on (`groups`.`id`=`matches`.`category` and `groups`.`deleted`<>1) where `matches`.`deleted`<>1 order by `groups`.`name` asc, `matches`.`datetime` asc";
 			$matches = $this->db->query($sql)->result_array();
 			$t = count($matches);
 			
@@ -213,7 +228,7 @@ class Homepage extends CI_Controller {
 				}
 			}	
 			if($_SESSION['profile']['points']==0){
-				$_SESSION['profile']['rank'] = "-";
+				$_SESSION['profile']['rank'] = "";
 			}
 			else{
 				$_SESSION['profile']['rank'] = $rank;
@@ -245,5 +260,9 @@ class Homepage extends CI_Controller {
 		$data['yield'] = 'main/elimination_1-8';
 
 		$this->load->view('main_layout', $data);
+	}
+	
+	public function cgu(){
+		$this->load->view('cgu_layout', $data);
 	}
 }

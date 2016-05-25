@@ -171,6 +171,7 @@ if(!count($matches)){
     </div>
 	<script>
 	$(".betbutton").click(function(){
+		jQuery(".errormessage").hide();
 		$("#betform").submit();
 		return false;
 	});

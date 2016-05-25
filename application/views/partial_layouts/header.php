@@ -1,6 +1,6 @@
 <head>
   <meta charset="utf-8">
-  <title>PRONOS-FOOT.com | Site de Pronostics de Football 100% Gratuit avec Prix a Gagner</title>
+  <title>PRONOS-FOOT.com | Site de Pronostics de Football 100% Gratuit avec Prix à Gagner</title>
   <meta name="description" content="Site de Pronostics de Football 100% Gratuit.
 Inscription Simple et Rapide.
 Collectez des Points en Trouvant les Résultats des Matchs de L&#39;EURO 2016.

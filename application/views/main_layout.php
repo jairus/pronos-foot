@@ -116,7 +116,6 @@ else if(!$_SESSION['profile']){
 <?php $this->load->view("partial_layouts/header")?>
 <body>
   <?php $this->load->view('partial_layouts/nav') ?>
-  <div id="anchor1" class="anchor"></div>
   <div class="w-section header-section">
     <!-- header div -->
     <?php $this->load->view('partial_layouts/section_header') ?>

@@ -3,3 +3,4 @@
           <div class="facebook-text large">Se Connecter avec Facebook</div>
         </div>
       </a>
+	  <div class="gui-copy">L’inscription a notre service valide votre adhésion à nos <a class="link-gui" href="<?php echo site_url("cgu"); ?>">CGU</a></div>

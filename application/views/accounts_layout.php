@@ -4,7 +4,7 @@
 <html data-wf-site="570cdf23fb4e011d1cf72234" data-wf-page="5719e33447140e34379df356">
 <head>
   <meta charset="utf-8">
-  <title>PRONOS-FOOT.com | Site de Pronostics de Football 100% Gratuit avec Prix a Gagner</title>
+  <title>PRONOS-FOOT.com | Site de Pronostics de Football 100% Gratuit avec Prix à Gagner</title>
   <meta name="description" content="Site de Pronostics de Football 100% Gratuit.
 Inscription Simple et Rapide.
 Collectez des Points en Trouvant les Résultats des Matchs de L&#39;EURO 2016.
@@ -35,18 +35,7 @@ Devenez le Champion de Pronos-Foot.com et Gagnez un iPhone 6.">
   <link rel="apple-touch-icon" href="<?php echo base_url();?>assets/images/pronos-foot-logo-large.png">
 </head>
 <body>
-  <!-- NAVIGATION -->
-  <div class="w-section nav-section">
-    <div data-collapse="medium" data-animation="default" data-duration="400" class="w-nav navbar">
-      <a href="<?php echo site_url(); ?>" class="w-nav-brand w-clearfix"><img alt="Pronostics Foot Gratuit" width="80" src="<?php echo base_url();?>assets/images/Logo.png" class="logo-image header">
-      </a>
-      <div class="w-clearfix picture-profile">
-        <div class="w-widget w-widget-facebook facebook-sharing account">
-          <iframe src="https://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.pronos-foot.com&amp;layout=button_count&amp;locale=en_US&amp;action=like&amp;show_faces=false&amp;share=false" scrolling="no" frameborder="0" allowtransparency="true" style="border: none; overflow: hidden; width: 90px; height: 20px;"></iframe>
-        </div><img width="50" src="<?php echo $_SESSION['profile']['image']; ?>" class="image-profile"><a href="<?php echo site_url("logout"); ?>" class="link-header">Logout</a>
-      </div>
-    </div>
-  </div>
+  <?php $this->load->view('partial_layouts/nav') ?>
   <div class="w-section header-section">
     <?php $this->load->view('accounts/sec_header') ?>
   </div>
@@ -54,7 +43,10 @@ Devenez le Champion de Pronos-Foot.com et Gagnez un iPhone 6.">
     <!-- CONTENT -->
     <?php $this->load->view($yield) ?>
   </div>
+  <!-- Display PRICES - section  -->
   <?php $this->load->view('partial_layouts/prices') ?>
+  <!-- Display RULES and Price & Points - section  -->
+  <?php $this->load->view('partial_layouts/rules') ?>
   <!-- FOOTER -->
   <div class="w-section footer-section">
     <div class="w-container footer-container">
