@@ -1,4 +1,30 @@
 <?php
+function testvar($value=""){
+	//testvar setter
+	if(isset($_GET['testvar'])){
+		if(!isset($_SESSION["testvar"])){
+			$_SESSION["testvar"] = array();
+		}
+		$values = explode(".", $_GET['testvar']);
+		$t = count($values);
+		for($i=0; $i<$t; $i++){
+			if($values[$i]=="clear"){
+				$_SESSION["testvar"] = array();
+			}
+			else if(!in_array($values[$i], $_SESSION['testvar'])){
+				$_SESSION["testvar"][] = $values[$i];
+			}
+		}
+	}
+	//testvar checker
+	$value = trim($value);
+	if(is_array($_SESSION['testvar']) && in_array($value, $_SESSION['testvar'])){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
 //overide site_url functions
 function site_url($uri = '', $nocdn = false){
 	$CI =& get_instance();

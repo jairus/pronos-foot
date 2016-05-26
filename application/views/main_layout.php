@@ -27,7 +27,7 @@ if (isset($accessToken)) {
 	$_SESSION['facebook_access_token'] = (string) $accessToken;
 	$fb->setDefaultAccessToken($accessToken);
 	try {
-		$response = $fb->get('/me?fields=id,name,email,picture.width(300).height(300)');
+		$response = $fb->get('/me?fields=location,id,name,birthday,first_name,last_name,email,picture.width(300).height(300)');
 		$userNode = $response->getGraphUser();
 	} 
 	catch(Facebook\Exceptions\FacebookResponseException $e) {
@@ -42,6 +42,7 @@ if (isset($accessToken)) {
 	$profile = $response->getDecodedBody();
 	$_SESSION['fbprofile'] = $profile;
 	
+
 	/*
 	[id] => 10153633752299646
     [name] => Jairus Bondoc
@@ -65,7 +66,7 @@ if($_SERVER['HTTP_HOST']=="pronos-foot.co"){
 	$_SESSION['fbprofile']['name'] = "Jerome Lee";
 }
 if(!$_SESSION['fbprofile']){
-	$permissions = ['email', 'user_likes']; // optional
+	$permissions = ['email', 'user_likes', 'user_birthday', 'user_location']; // optional
 	$loginUrl = $helper->getLoginUrl('http://pronos-foot.com/', $permissions);
 	$_SESSION['fbloginurl'] = $loginUrl;
 }
@@ -120,7 +121,7 @@ else if(!$_SESSION['profile']){
     <!-- header div -->
     <?php $this->load->view('partial_layouts/section_header') ?>
     <div class="w-container inscription-container">
-      <h1 class="header-title2">Inscrivez-vous Maintenant !</h1>
+      <h1 class="header-title2">Inscrivez-vous Maintenant avec Facebook !</h1>
       <!-- LOAD signin_form if not applicable to Login through Facebook -->
       <?php
         //$this->load->view('users/signin_form')

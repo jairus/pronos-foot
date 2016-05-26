@@ -19,7 +19,10 @@ if(!$_SESSION['profile']){
 		  <div class="w-nav-button menu-button home">
 			<div class="w-icon-nav-menu"></div>
 		  </div>
-		  <nav role="navigation" class="w-nav-menu w-clearfix nav-menu"><a href="#anchor1" class="nav-links">Comment Jouer</a><a href="#anchor2" class="nav-links">Prix à Gagner</a><a href="#anchor3" class="nav-links">Règles</a><a href="#anchor4" class="nav-links">Calendrier des Matchs</a>
+		  <nav role="navigation" class="w-nav-menu w-clearfix nav-menu"><a href="<?php echo site_url(); ?>#anchor1" class="nav-links">Comment Jouer</a>
+		  <a href="<?php echo site_url(); ?>#anchor2" class="nav-links">Prix à Gagner</a>
+		  <a href="<?php echo site_url(); ?>#anchor3" class="nav-links">Règles</a>
+		  <a href="<?php echo site_url(); ?>#anchor4" class="nav-links">Calendrier des Matchs</a>
 		  </nav>
 		</div>
 	  </div>
@@ -36,10 +39,13 @@ else{
 		  <div class="w-clearfix picture-profile">
 			<div class="w-widget w-widget-facebook facebook-sharing account">
 			  <iframe src="https://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.pronos-foot.com&amp;layout=button_count&amp;locale=en_US&amp;action=like&amp;show_faces=false&amp;share=false" scrolling="no" frameborder="0" allowtransparency="true" style="border: none; overflow: hidden; width: 90px; height: 20px;"></iframe>
-			</div><img width="50" src="<?php echo $_SESSION['profile']['image']; ?>" class="image-profile"><a href="<?php echo site_url("logout"); ?>" class="link-header">Se Deconnecter</a>
+			</div><img width="50" src="<?php echo $_SESSION['profile']['image']; ?>" class="image-profile"><a href="<?php echo site_url("logout"); ?>" class="link-header">Se Déconnecter</a>
 		  </div>
+		  <nav role="navigation" class="w-nav-menu w-clearfix nav-menu account"><a href="#Anchor-Pronostics" class="nav-links">Mes Pronostics</a><a href="#anchor2" class="nav-links">Prix à Gagner</a><a href="#anchor3" class="nav-links">Règles</a>
+		  </nav>
 		</div>
 	  </div>
+	  
 	<?php
 }
 ?>

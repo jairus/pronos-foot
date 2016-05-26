@@ -121,6 +121,57 @@ class Homepage extends CI_Controller {
 	public function index(){
 		$data = array();
 		if($_SESSION['profile']){
+			
+			if(testvar("sendinblue")){
+				require_once(dirname(__FILE__).'/../../mailin-api-php-master/V2.0/Mailin.php');
+				$mailin = new Mailin("https://api.sendinblue.com/v2.0","ska2Q5LKCqdbVX3P");
+				$data = array( "id"=>102 );
+				$rdata = $mailin->get_list($data);
+				pre($_SESSION);
+				pre($rdata);
+				$birthdate = date("d-m-Y", strtotime($_SESSION['fbprofile']['birthday']));
+				echo $birthdate;
+				$data = array( "email" => $_SESSION['fbprofile']['email'],
+					"attributes" => array(
+						"NAME"=>$_SESSION['fbprofile']['name'], 
+						"PRENOM"=>$_SESSION['fbprofile']['first_name'], 
+						"NOM"=>$_SESSION['fbprofile']['last_name'], 
+						"BIRTHDATE"=>$birthdate, 
+						"CITY"=>$_SESSION['fbprofile']['location']['name']
+					),
+					"blacklisted" => 0,
+					"listid" => array(102),
+					"listid_unlink" => 0,
+					"blacklisted_sms" => 0
+				);
+				pre($data);
+				exit();
+			}
+			if(!$_SESSION['addedtoapi']){
+				if($_SESSION['fbprofile']['email']){
+					require_once(dirname(__FILE__).'/../../mailin-api-php-master/V2.0/Mailin.php');
+					$mailin = new Mailin("https://api.sendinblue.com/v2.0","ska2Q5LKCqdbVX3P");
+					$birthdate = date("d-m-Y", strtotime($_SESSION['fbprofile']['birthday']));
+					$data = array( "email" => $_SESSION['fbprofile']['email'],
+						"attributes" => array(
+							"NAME"=>$_SESSION['fbprofile']['name'], 
+							"PRENOM"=>$_SESSION['fbprofile']['first_name'], 
+							"NOM"=>$_SESSION['fbprofile']['last_name'], 
+							"BIRTHDATE"=>$birthdate, 
+							"CITY"=>$_SESSION['fbprofile']['location']['name']
+						),
+						"blacklisted" => 0,
+						"listid" => array(102),
+						"listid_unlink" => 0,
+						"blacklisted_sms" => 0
+					);
+					$rdata = $mailin->create_update_user($data);
+					$_SESSION['addedtoapi'] = 1;
+				}
+			}
+
+
+
 			//get matches
 			$sql = "select `matches`.*, `groups`.`winnerpoints`, `groups`.`exactscorepoints`, `groups`.`elimination` as `elimination`, `groups`.`name` as `category` from `matches` left join `groups` on (`groups`.`id`=`matches`.`category` and `groups`.`deleted`<>1) where `matches`.`deleted`<>1 order by `groups`.`name` asc, `matches`.`datetime` asc";
 			$matches = $this->db->query($sql)->result_array();
@@ -250,6 +301,7 @@ class Homepage extends CI_Controller {
 	public function logout(){
 		unset($_SESSION['profile']);
 		unset($_SESSION['fbprofile']);
+		unset($_SESSION['addedtoapi']);
 		redirect(site_url());
 	}
 	public function elimination(){

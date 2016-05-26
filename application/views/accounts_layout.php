@@ -1,5 +1,35 @@
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
+<!-- Last Published: Tue May 10 2016 14:21:46 GMT+0000 (UTC) -->
+<html data-wf-site="570cdf23fb4e011d1cf72234" data-wf-page="572c9bb1c23ef15860a555bc">
+<?php $this->load->view("partial_layouts/header")?>
+<body>
+  <?php $this->load->view('partial_layouts/nav') ?>
+  <div class="w-section header-section">
+    <?php $this->load->view('accounts/sec_header') ?>
+  </div>
+  <div class="w-section grille-section calendar version2 account">
+    <!-- CONTENT -->
+    <?php $this->load->view($yield) ?>
+  </div>
+  <!-- Display PRICES - section  -->
+  <?php $this->load->view('partial_layouts/prices') ?>
+  <!-- Display RULES and Price & Points - section  -->
+  <?php $this->load->view('partial_layouts/rules') ?>
+  <!-- FOOTER SECTION -->
+  <?php $this->load->view('partial_layouts/footer') ?>
+</body>
+</html>
+
+<?php
+return 0;
+?>
+
+
+
+
+<!DOCTYPE html>
+<!-- This site was created in Webflow. http://www.webflow.com-->
 <!-- Last Published: Tue May 10 2016 14:21:45 GMT+0000 (UTC) -->
 <html data-wf-site="570cdf23fb4e011d1cf72234" data-wf-page="5719e33447140e34379df356">
 <head>
@@ -29,6 +59,23 @@ Devenez le Champion de Pronos-Foot.com et Gagnez un iPhone 6.">
       }
     });
   </script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-8871581-24', 'auto');
+  
+  <?php
+  if($_SERVER['REQUEST_URI']=="/"){
+	?>ga('send', 'pageview', 'My Account');<?php
+  }
+  else{
+	?>ga('send', 'pageview');<?php
+  }
+  ?>
+</script>
   <script type="text/javascript" src="js/modernizr.js"></script>
   <script src="<?php echo site_url(); ?>material/vendors/bower_components/jquery/dist/jquery.min.js"></script>
   <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url();?>assets/images/pronos-foot-logo-small.png">
@@ -39,10 +86,8 @@ Devenez le Champion de Pronos-Foot.com et Gagnez un iPhone 6.">
   <div class="w-section header-section">
     <?php $this->load->view('accounts/sec_header') ?>
   </div>
-  <div class="w-section grille-section calendar version2 account">
-    <!-- CONTENT -->
-    <?php $this->load->view($yield) ?>
-  </div>
+  <!-- CONTENT -->
+  <?php $this->load->view($yield) ?>
   <!-- Display PRICES - section  -->
   <?php $this->load->view('partial_layouts/prices') ?>
   <!-- Display RULES and Price & Points - section  -->

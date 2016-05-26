@@ -5,11 +5,22 @@ if(!count($matches)){
 	//echo date("Y-m-d H:i:s");
 	//return 0;
 ?>
-	
+<div class="w-section grille-section calendar version2 account">
+	<div id="Anchor-Pronostics" class="anchor number4"></div>
     <div class="w-container grille-container">
       <p class="grille-title1">EURO 2016 Calendrier | Phase de Groupes</p>
-      <p class="prix-text2 consignes">Vous n'êtes pas obligé de saisir tous vos pronostics en une fois.
-        <br>Vous pouvez modifier chaque pronostic jusqu'au début du match</p>
+      <p class="prix-text2 consignes">
+		Vous n'êtes pas obligé de saisir tous vos pronostics en une fois.
+		<br>
+		Si vous voulez rentrer les matchs au fur et à mesure, veuillez consulter le calendrier sur la page d'accueil afin de ne pas oublier de pronostiquer le résultat d'un match.
+		<br>
+		Pour accéder a la page d'accueil a partir de cette page, veuillez cliquer sur le lien "Se Déconnecter".
+		<br>
+		Vous pouvez entrer ou modifier chaque pronostic jusqu'au début du match. 
+		<br>
+		L'équipe pronosfoot vous souhaite bonne chance dans vos pronostics.
+		</p>
+
       <div class="div-games-info">
         <div class="container-button-sauver">
           <a href="#" class="w-inline-block link-button-sauver">
@@ -196,3 +207,5 @@ if(!count($matches)){
 	}
 	
 	</script>
+	
+</div>
