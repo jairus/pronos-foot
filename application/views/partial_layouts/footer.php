@@ -6,12 +6,18 @@
             <br>Site de Pronostics de Football 100% Gratuit</div>
         </div>
         <div class="w-col w-col-4">
-          <div class="footer-text middle">INSCRIVEZ-VOUS MAINTENANT !</div>
-          <a href="<?php echo $_SESSION['fbloginurl']; ?>" data-ix="open-lightbox" class="w-inline-block w-clearfix facebook-link footer">
-            <div class="w-clearfix facebook-button small footer"><img width="20" src="<?php echo base_url();?>assets/images/facebook-logo.png" class="fecebook-logo footer">
-              <div class="facebook-text footer">Se Connecter avec Facebook</div>
-            </div>
-          </a>
+		  <?php
+		  if(!$_SESSION['profile']['id']){
+			  ?>
+			  <div class="footer-text middle">INSCRIVEZ-VOUS MAINTENANT !</div>
+			  <a href="<?php echo $_SESSION['fbloginurl']; ?>" data-ix="open-lightbox" class="w-inline-block w-clearfix facebook-link footer">
+				<div class="w-clearfix facebook-button small footer"><img width="20" src="<?php echo base_url();?>assets/images/facebook-logo.png" class="fecebook-logo footer">
+				  <div class="facebook-text footer">Se Connecter avec Facebook</div>
+				</div>
+			  </a>
+			  <?php
+		  }
+		  ?>
         </div>
         <div class="w-col w-col-3">
           <div class="footer-company">PRONOS-FOOT.COM

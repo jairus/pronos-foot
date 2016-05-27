@@ -34,7 +34,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 ga('create', 'UA-8871581-24', 'auto');
 
  <?php
-if($_SERVER['REQUEST_URI']=="/"){
+if($_SERVER['REQUEST_URI']=="/"&&$_SESSION['profile']){
 ?>ga('send', 'pageview', 'My Account');<?php
 }
 else{
